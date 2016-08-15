@@ -1,0 +1,15 @@
+.newDiverContainer {
+  float:left;
+}
+
+li {
+  padding: 5px;
+}
+
+input.form-control {
+  width: 40px;
+}
+
+.headerInfo input{
+  width:100px;
+}

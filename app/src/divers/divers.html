@@ -1,0 +1,22 @@
+<div class="diversContainer">
+  <ol class="diverList">
+    <li *ngFor='let diver of divers'>
+      
+      <button class="buttonList">
+        <table class="info">
+          <tr>
+            <th colspan="6">{{diver.name}}</th>
+          </tr>
+          <tr>  
+            <td *ngFor='let dive of diver.list'>
+              {{dive.num}}{{dive.pos}} <br> {{dive.level}}m 
+            </td>
+          </tr>
+
+        </table>
+      </button>
+    
+    </li>
+  </ol>
+  
+</div>
