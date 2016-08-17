@@ -1,0 +1,17 @@
+table {
+  padding-top:20px;
+}
+
+th {
+  font-size:20px;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  vertical-align:top;
+}
+
+#start {
+  float:right;
+}

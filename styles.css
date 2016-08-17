@@ -7,7 +7,54 @@ body {
   margin: 2em;
 }
 
- /*
-  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
-  * for the full set of master styles used by the documentation samples
-  */
+html * {
+      font-family: Arial;
+}
+
+#appWrapper {
+  margin-left:auto;
+  margin-right:auto;
+  width:900px;
+}
+
+.pushBtn {
+  height:30px;
+
+  font-size:18px;
+  font-weight:bold;
+
+  border-radius:5px;
+
+  background-color:#47d147;
+  box-shadow:3px 3px 10px #003311;
+  border:none;
+  outline:none;
+}
+
+.pushBtn:hover {
+  background-color:#4dff4d;
+}
+
+.pushBtn:active {
+  -ms-transform: translate(5px, 5px); /* IE 9 */
+  -webkit-transform: translate(3px,3px); /* Chrome, Safari, Opera */
+  transform:translate(5px,5px);
+  box-shadow:none;
+}
+
+.pike {
+  height:25%;
+  width:auto;
+
+  display:block;
+  margin:auto;
+  margin-top:10%;
+  
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+

@@ -17,7 +17,7 @@ var HomeComponent = (function () {
         core_1.Component({
             selector: 'home',
             templateUrl: './app/src/home/home.html',
-            styles: ["\n    th {\n      font-size:20px;\n      padding: 10px;\n      text-align: left;\n    }\n\n    td {\n      vertical-align:top;\n    }\n  "]
+            styleUrls: ['./app/src/home/home.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);

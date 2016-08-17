@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'meet',
   template: `
-    <navbar></navbar>
-    <router-outlet></router-outlet>
+    <h1>Meet</h1>
   `,
   styles: [`
     h1 {
       text-align:center;
+      padding-top:20px;
     }
   `]
 })
 
-export class AppComponent { }
+export class MeetComponent { }
