@@ -17,6 +17,11 @@ var NewDiverComponent = (function () {
         this.diverService = diverService;
         this.divers = [];
     }
+    NewDiverComponent.prototype.ngOnInit = function () {
+        this.sex = 'F';
+        this.setPosition();
+        this.setLevel();
+    };
     NewDiverComponent.prototype.newDiver = function () {
         var dives = [];
         dives.push(new dive_1.Dive(this.dive0, this.pos0, this.level0));
@@ -27,7 +32,6 @@ var NewDiverComponent = (function () {
         if (this.sex == "M") {
             dives.push(new dive_1.Dive(this.dive5, this.pos5, this.level5));
         }
-        this.divers.push(new diver_1.Diver(this.diverName, this.sex, dives));
         this.diverService.addDiver(new diver_1.Diver(this.diverName, this.sex, dives));
         this.resetForm();
     };
@@ -40,12 +44,24 @@ var NewDiverComponent = (function () {
         this.dive3 = '';
         this.dive4 = '';
         this.dive5 = '';
+        this.setPosition();
+        this.setLevel();
+    };
+    NewDiverComponent.prototype.setPosition = function () {
         this.pos0 = 'A';
         this.pos1 = 'A';
         this.pos2 = 'A';
         this.pos3 = 'A';
         this.pos4 = 'A';
         this.pos5 = 'A';
+    };
+    NewDiverComponent.prototype.setLevel = function () {
+        this.level0 = '1';
+        this.level1 = '1';
+        this.level2 = '1';
+        this.level3 = '1';
+        this.level4 = '1';
+        this.level5 = '1';
     };
     NewDiverComponent = __decorate([
         core_1.Component({
