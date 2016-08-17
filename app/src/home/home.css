@@ -15,3 +15,7 @@ td {
 #start {
   float:right;
 }
+
+#diverListComponent {
+  min-width:620px;
+}
