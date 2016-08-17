@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styles: [`
     h1 {
       text-align:center;
+      padding-top:20px;
     }
   `]
 })

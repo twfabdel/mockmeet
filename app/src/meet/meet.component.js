@@ -16,7 +16,7 @@ var MeetComponent = (function () {
         core_1.Component({
             selector: 'meet',
             template: "\n    <h1>Meet</h1>\n  ",
-            styles: ["\n    h1 {\n      text-align:center;\n    }\n  "]
+            styles: ["\n    h1 {\n      text-align:center;\n      padding-top:20px;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], MeetComponent);
