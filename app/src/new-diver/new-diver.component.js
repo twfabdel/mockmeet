@@ -29,6 +29,23 @@ var NewDiverComponent = (function () {
         }
         this.divers.push(new diver_1.Diver(this.diverName, this.sex, dives));
         this.diverService.addDiver(new diver_1.Diver(this.diverName, this.sex, dives));
+        this.resetForm();
+    };
+    NewDiverComponent.prototype.resetForm = function () {
+        this.diverName = '';
+        //TODO: consolidate into loop?
+        this.dive0 = '';
+        this.dive1 = '';
+        this.dive2 = '';
+        this.dive3 = '';
+        this.dive4 = '';
+        this.dive5 = '';
+        this.pos0 = 'A';
+        this.pos1 = 'A';
+        this.pos2 = 'A';
+        this.pos3 = 'A';
+        this.pos4 = 'A';
+        this.pos5 = 'A';
     };
     NewDiverComponent = __decorate([
         core_1.Component({

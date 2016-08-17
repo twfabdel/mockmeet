@@ -30,5 +30,26 @@ export class NewDiverComponent {
     this.divers.push(new Diver(this.diverName, this.sex, dives));
 
     this.diverService.addDiver(new Diver(this.diverName, this.sex, dives));
+
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.diverName='';
+    
+    //TODO: consolidate into loop?
+    this.dive0='';
+    this.dive1='';
+    this.dive2='';
+    this.dive3='';
+    this.dive4='';
+    this.dive5='';
+
+    this.pos0='A';
+    this.pos1='A';
+    this.pos2='A';
+    this.pos3='A';
+    this.pos4='A';
+    this.pos5='A';
   }
 }
