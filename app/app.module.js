@@ -14,8 +14,11 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var new_diver_component_1 = require('./src/new-diver/new-diver.component');
 var divers_component_1 = require('./src/divers/divers.component');
+var navbar_component_1 = require('./src/navbar/navbar.component');
 var home_component_1 = require('./src/home/home.component');
+var meet_component_1 = require('./src/meet/meet.component');
 var diver_service_1 = require('./src/divers/diver.service');
+var app_routing_1 = require('./src/routes/app.routing');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,13 +26,16 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_1.routing
             ],
             declarations: [
                 app_component_1.AppComponent,
                 new_diver_component_1.NewDiverComponent,
                 divers_component_1.DiversComponent,
-                home_component_1.HomeComponent
+                home_component_1.HomeComponent,
+                meet_component_1.MeetComponent,
+                navbar_component_1.NavbarComponent
             ],
             providers: [
                 diver_service_1.DiverService

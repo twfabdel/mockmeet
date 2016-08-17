@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var MeetComponent = (function () {
+    function MeetComponent() {
     }
-    AppComponent = __decorate([
+    MeetComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n    <navbar></navbar>\n    <router-outlet></router-outlet>\n  ",
+            selector: 'meet',
+            template: "\n    <h1>Meet</h1>\n  ",
             styles: ["\n    h1 {\n      text-align:center;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], MeetComponent);
+    return MeetComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MeetComponent = MeetComponent;
+//# sourceMappingURL=meet.component.js.map

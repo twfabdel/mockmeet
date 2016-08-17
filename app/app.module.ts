@@ -5,20 +5,29 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { NewDiverComponent } from './src/new-diver/new-diver.component';
 import { DiversComponent } from './src/divers/divers.component';
+
+import { NavbarComponent } from './src/navbar/navbar.component';
+
 import { HomeComponent } from './src/home/home.component';
+import { MeetComponent } from './src/meet/meet.component';
 
 import { DiverService } from './src/divers/diver.service';
+
+import { routing } from './src/routes/app.routing'
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
   declarations: [
     AppComponent,
     NewDiverComponent,
     DiversComponent,
-    HomeComponent
+    HomeComponent,
+    MeetComponent,
+    NavbarComponent
   ],
   providers: [
     DiverService
