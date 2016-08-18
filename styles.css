@@ -19,20 +19,21 @@ html * {
 
 .pushBtn {
   height:30px;
+  color:white;
 
   font-size:18px;
   font-weight:bold;
 
   border-radius:5px;
 
-  background-color:#47d147;
+  background-color:#00b33c;
   box-shadow:3px 3px 10px #003311;
   border:none;
   outline:none;
 }
 
 .pushBtn:hover {
-  background-color:#4dff4d;
+  background-color:#00802b;
 }
 
 .pushBtn:active {
