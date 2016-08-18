@@ -1,8 +1,8 @@
 <table>
   <tr>
-    <th>Sign Up a New Diver</th>
-    <th>
-      Divers Competing:
+    <th id="left">Sign Up a New Diver</th>
+    <th id="right">
+      Divers Competing:</th><th>
       <a routerLink="/meet"><button class="pushBtn" id="start">
         Start Competition
       </button></a>
@@ -10,6 +10,6 @@
   </tr>
   <tr>
     <td><new-diver></new-diver></td>
-    <td><divers></divers></td>
+    <td colspan="2" id="diverListComponent"><divers></divers></td>
   </tr>
 </table>

@@ -38,4 +38,9 @@ export class DiversComponent implements OnInit {
       ]
     ));
   }
+
+  deleteDiver(diver: Diver) {
+    var i = this.divers.indexOf(diver);
+    this.divers.splice(i, 1);
+  }
 }

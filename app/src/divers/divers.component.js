@@ -34,6 +34,10 @@ var DiversComponent = (function () {
             new dive_1.Dive('103', 'B', 1)
         ]));
     };
+    DiversComponent.prototype.deleteDiver = function (diver) {
+        var i = this.divers.indexOf(diver);
+        this.divers.splice(i, 1);
+    };
     DiversComponent = __decorate([
         core_1.Component({
             selector: 'divers',

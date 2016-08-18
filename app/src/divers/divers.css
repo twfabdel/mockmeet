@@ -65,6 +65,24 @@
   background-color:#a6a6a6;
 }
 
+#deleteBtn {
+  position:absolute;
+  right:12px;
+
+  width:24px;
+  height:24px;
+
+  vertical-align:center;
+  text-align:center;
+
+  border-radius:80%;
+  background-color:red;
+}
+
+#deleteBtn:hover {
+  background-color:#990000;
+}
+
 .diverList {
   padding-bottom:5px;
 }

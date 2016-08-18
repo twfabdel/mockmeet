@@ -8,6 +8,11 @@ li {
 
 input.form-control {
   width: 40px;
+  background-color:white;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
 .headerInfo input{

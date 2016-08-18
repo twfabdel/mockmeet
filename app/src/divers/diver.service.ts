@@ -10,8 +10,7 @@ export class DiverService {
     return this.divers;
   }
 
-  addDiver(diver: Diver) {
-    
+  addDiver(diver: Diver) {    
     this.divers.unshift(diver);
   }
 }
