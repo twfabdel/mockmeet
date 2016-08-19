@@ -3,7 +3,6 @@ import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
-import { ScoresService } from '../standings/scores.service';
 
 @Component({
   selector: 'dive-scoring',
@@ -25,12 +24,10 @@ export class DiveScoringComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private diverService: DiverService,
-              private scoresService: ScoresService) { }
+  constructor(private diverService: DiverService) { }
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
-    this.scoresService.setDivers(this.divers);
 
     this.divers.push(new Diver(
       "Diver1", "M", [
@@ -68,7 +65,7 @@ export class DiveScoringComponent implements OnInit {
     this.submitted = true;
 
     if(this.scores.length % 2 == 0) {
-      alert("Please enter an odd number of scores");
+      alert("Please enter an odd number of scores.");
       return;
     }
 
@@ -83,6 +80,11 @@ export class DiveScoringComponent implements OnInit {
   }
 
   private next() {
+    if(!this.submitted) {
+      alert("Please enter scores or submit the score entered.");
+      return;
+    }
+
     this.scores = [];
     this.diverUp.addScore(this.dive.total);
     this.setDiver();

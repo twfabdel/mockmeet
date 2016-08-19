@@ -20,7 +20,6 @@ var navbar_component_1 = require('./src/navbar/navbar.component');
 var home_component_1 = require('./src/home/home.component');
 var meet_component_1 = require('./src/meet/meet.component');
 var diver_service_1 = require('./src/divers/diver.service');
-var scores_service_1 = require('./src/standings/scores.service');
 var app_routing_1 = require('./src/routes/app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -43,8 +42,7 @@ var AppModule = (function () {
                 navbar_component_1.NavbarComponent
             ],
             providers: [
-                diver_service_1.DiverService,
-                scores_service_1.ScoresService
+                diver_service_1.DiverService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

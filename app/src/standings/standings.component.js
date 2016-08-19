@@ -10,14 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var diver_service_1 = require('../divers/diver.service');
-var scores_service_1 = require('./scores.service');
 var StandingsComponent = (function () {
-    function StandingsComponent(diverService, scoresService) {
+    function StandingsComponent(diverService) {
         this.diverService = diverService;
-        this.scoresService = scoresService;
     }
     StandingsComponent.prototype.ngOnInit = function () {
-        this.divers = this.scoresService.getDivers();
+        this.divers = this.diverService.getDivers();
     };
     StandingsComponent = __decorate([
         core_1.Component({
@@ -25,7 +23,7 @@ var StandingsComponent = (function () {
             templateUrl: './app/src/standings/standings.html',
             styles: ["\n    h1 {\n      padding-top:20px;\n    }\n  "]
         }), 
-        __metadata('design:paramtypes', [diver_service_1.DiverService, scores_service_1.ScoresService])
+        __metadata('design:paramtypes', [diver_service_1.DiverService])
     ], StandingsComponent);
     return StandingsComponent;
 }());
