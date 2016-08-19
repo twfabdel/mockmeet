@@ -9,25 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var DiverService = (function () {
-    function DiverService() {
-        this.divers = [];
+var diver_service_1 = require('../divers/diver.service');
+var StandingsComponent = (function () {
+    function StandingsComponent(diverService) {
+        this.diverService = diverService;
     }
-    DiverService.prototype.getDivers = function () {
-        return this.divers;
+    StandingsComponent.prototype.ngOnInit = function () {
+        this.divers = this.diverService.getDivers();
     };
-    DiverService.prototype.addDiver = function (diver) {
-        this.divers.unshift(diver);
-    };
-    DiverService.prototype.deleteDiver = function (diver) {
-        var i = this.divers.indexOf(diver);
-        this.divers.splice(i, 1);
-    };
-    DiverService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], DiverService);
-    return DiverService;
+    StandingsComponent = __decorate([
+        core_1.Component({
+            selector: 'standings',
+            templateUrl: './app/src/standings/standings.html',
+            styles: ["\n    h1 {\n      text-align:center;\n      padding-top:20px;\n    }\n  "]
+        }), 
+        __metadata('design:paramtypes', [diver_service_1.DiverService])
+    ], StandingsComponent);
+    return StandingsComponent;
 }());
-exports.DiverService = DiverService;
-//# sourceMappingURL=diver.service.js.map
+exports.StandingsComponent = StandingsComponent;
+//# sourceMappingURL=standings.component.js.map

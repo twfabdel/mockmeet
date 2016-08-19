@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var diver_1 = require('../diver/diver');
+var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
 var DiveScoringComponent = (function () {
     function DiveScoringComponent(diverService) {
@@ -22,6 +24,22 @@ var DiveScoringComponent = (function () {
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
+        this.divers.push(new diver_1.Diver("Diver1", "M", [
+            new dive_1.Dive('103', 'B', 1),
+            new dive_1.Dive('203', 'B', 1),
+            new dive_1.Dive('303', 'B', 1),
+            new dive_1.Dive('403', 'B', 1),
+            new dive_1.Dive('5132', 'D', 1),
+            new dive_1.Dive('5134', 'D', 1)
+        ]));
+        this.divers.push(new diver_1.Diver("Diver2", "M", [
+            new dive_1.Dive('103', 'B', 1),
+            new dive_1.Dive('203', 'B', 1),
+            new dive_1.Dive('303', 'B', 1),
+            new dive_1.Dive('403', 'B', 1),
+            new dive_1.Dive('5132', 'D', 1),
+            new dive_1.Dive('5134', 'D', 1)
+        ]));
         this.setDiver();
     };
     DiveScoringComponent.prototype.addScore = function (score) {

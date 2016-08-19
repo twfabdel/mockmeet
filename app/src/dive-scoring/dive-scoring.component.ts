@@ -28,6 +28,28 @@ export class DiveScoringComponent implements OnInit {
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
+
+    this.divers.push(new Diver(
+      "Diver1", "M", [
+        new Dive('103', 'B', 1),
+        new Dive('203', 'B', 1),
+        new Dive('303', 'B', 1),
+        new Dive('403', 'B', 1),
+        new Dive('5132', 'D', 1),
+        new Dive('5134', 'D', 1)
+      ]
+    ));
+    this.divers.push(new Diver(
+      "Diver2", "M", [
+        new Dive('103', 'B', 1),
+        new Dive('203', 'B', 1),
+        new Dive('303', 'B', 1),
+        new Dive('403', 'B', 1),
+        new Dive('5132', 'D', 1),
+        new Dive('5134', 'D', 1)
+      ]
+    ));
+
     this.setDiver();
   }
 
