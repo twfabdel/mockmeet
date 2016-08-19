@@ -18,21 +18,34 @@ var DiveScoringComponent = (function () {
         this.scores = [];
         this.round = 0;
         this.diverIndex = 0;
-        this.running = true;
+        this.submitted = false;
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
         this.setDiver();
     };
     DiveScoringComponent.prototype.addScore = function (score) {
+        if (this.submitted) {
+            this.submitted = false;
+            this.scores = [];
+        }
         this.scores.push(score);
     };
     DiveScoringComponent.prototype.submit = function () {
+        this.submitted = true;
+        if (this.scores.length % 2 == 0) {
+            alert("Please enter an odd number of scores");
+            return;
+        }
+        this.dive.giveScore(this.scores);
         this.diverIndex += 1;
         if (this.diverIndex == this.divers.length) {
             this.round += 1;
             this.diverIndex = 0;
         }
+    };
+    DiveScoringComponent.prototype.next = function () {
+        this.scores = [];
         this.setDiver();
     };
     DiveScoringComponent.prototype.setDiver = function () {

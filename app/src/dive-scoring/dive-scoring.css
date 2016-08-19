@@ -9,6 +9,10 @@ ul {
   text-align:center;
 }
 
+table {
+  width:100%;
+}
+
 button {
   width:30px;
   height:30px;
@@ -17,4 +21,28 @@ button {
 
 button#scoreSubmit {
   width:auto;
+}
+
+button#nextDiver {
+  width:auto;
+  float:right;
+}
+
+#diveInfo {
+  float:right;
+}
+
+#scoresBox {
+  width:400px;
+  height:auto;
+}
+
+.tableHeader {
+  vertical-align: top;
+
+  padding:5px;
+  padding-bottom:15px;
+
+  font-weight:bold;
+  font-size:25px;
 }

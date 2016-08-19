@@ -22,7 +22,7 @@ export class DiveScoringComponent implements OnInit {
 
   divers: Diver[];
 
-  running = true;
+  submitted = false;
 
   constructor(private diverService: DiverService) { }
 
@@ -32,17 +32,33 @@ export class DiveScoringComponent implements OnInit {
   }
 
   private addScore(score: number) {
+    if(this.submitted) {
+      this.submitted = false;
+      this.scores = [];
+    }
     this.scores.push(score);
   }
 
   private submit() {
+    this.submitted = true;
+
+    if(this.scores.length % 2 == 0) {
+      alert("Please enter an odd number of scores");
+      return;
+    }
+
+    this.dive.giveScore(this.scores);
+
     this.diverIndex += 1;
 
     if(this.diverIndex == this.divers.length) {
       this.round += 1;
       this.diverIndex = 0;
     }
+  }
 
+  private next() {
+    this.scores = [];
     this.setDiver();
   }
 

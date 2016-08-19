@@ -1,4 +1,13 @@
-<h2>{{diverUp.name}} {{dive.num}}{{dive.pos}} {{dive.level}}m</h2>
+<table>
+  <tr>
+    <td class="tableHeader" >
+      <span>{{diverUp.name}}</span> 
+    </td>
+    <td class="tableHeader" >
+      <span id="diveInfo">{{dive.num}}{{dive.pos}} {{dive.level}}m</span>
+    </td>
+  </tr>
+</table>
 
 <table>
   <tr>
@@ -18,10 +27,21 @@
   </tr>
 </table>
 
-<h3>{{scores}}</h3>
-
-<button id="scoreSubmit" class="pushBtn" (click)="submit()">
-  Submit Scores
-</button>
+<table>
+  <tr>
+    <td id="scoresBox">
+      <h3>Scores: {{scores}}</h3>
+      <h3>Total: {{dive.total}}</h3>
+      <button id="scoreSubmit" class="pushBtn" (click)="submit()">
+        Submit Scores
+      </button>
+    </td>
+    <td valign="bottom">
+      <button id="nextDiver" class="pushBtn" (click)="next()">
+        Next Diver
+      </button>
+    </td>
+  </tr>
+</table>
 
 

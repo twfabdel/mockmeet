@@ -5,6 +5,13 @@ var Dive = (function () {
         this.pos = pos;
         this.level = level;
     }
+    Dive.prototype.giveScore = function (scores) {
+        this.scoreList = scores;
+        this.total = 0;
+        for (var i = 0; i < scores.length; i++) {
+            this.total += scores[i];
+        }
+    };
     return Dive;
 }());
 exports.Dive = Dive;
