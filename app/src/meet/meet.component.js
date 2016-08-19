@@ -15,7 +15,7 @@ var MeetComponent = (function () {
     MeetComponent = __decorate([
         core_1.Component({
             selector: 'meet',
-            template: "\n    <h1>Meet</h1>\n  ",
+            templateUrl: './app/src/meet/meet.html',
             styles: ["\n    h1 {\n      text-align:center;\n      padding-top:20px;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])

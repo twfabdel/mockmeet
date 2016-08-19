@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 import { NewDiverComponent } from './src/new-diver/new-diver.component';
 import { DiversComponent } from './src/divers/divers.component';
+import { DiveScoringComponent } from './src/dive-scoring/dive-scoring.component';
 
 import { NavbarComponent } from './src/navbar/navbar.component';
 
@@ -25,6 +26,7 @@ import { routing } from './src/routes/app.routing'
     AppComponent,
     NewDiverComponent,
     DiversComponent,
+    DiveScoringComponent,
     HomeComponent,
     MeetComponent,
     NavbarComponent

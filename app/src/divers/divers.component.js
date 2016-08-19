@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var diver_1 = require('../diver/diver');
-var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
 var DiversComponent = (function () {
     function DiversComponent(diverService) {
@@ -18,21 +16,6 @@ var DiversComponent = (function () {
     }
     DiversComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
-        this.divers.push(new diver_1.Diver("Diver1", "M", [
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1)
-        ]));
-        this.divers.push(new diver_1.Diver("Diver2", "F", [
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('103', 'B', 1)
-        ]));
     };
     DiversComponent.prototype.deleteDiver = function (diver) {
         var i = this.divers.indexOf(diver);

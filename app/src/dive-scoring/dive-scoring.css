@@ -1,0 +1,48 @@
+ul li {
+  display:inline;
+  padding:3px;
+}
+
+ul {
+  padding:0;
+  list-style-type: none;
+  text-align:center;
+}
+
+table {
+  width:100%;
+}
+
+button {
+  width:30px;
+  height:30px;
+  font-size:14px;
+}
+
+button#scoreSubmit {
+  width:auto;
+}
+
+button#nextDiver {
+  width:auto;
+  float:right;
+}
+
+#diveInfo {
+  float:right;
+}
+
+#scoresBox {
+  width:400px;
+  height:auto;
+}
+
+.tableHeader {
+  vertical-align: top;
+
+  padding:5px;
+  padding-bottom:15px;
+
+  font-weight:bold;
+  font-size:25px;
+}

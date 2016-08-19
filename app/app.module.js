@@ -14,6 +14,7 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var new_diver_component_1 = require('./src/new-diver/new-diver.component');
 var divers_component_1 = require('./src/divers/divers.component');
+var dive_scoring_component_1 = require('./src/dive-scoring/dive-scoring.component');
 var navbar_component_1 = require('./src/navbar/navbar.component');
 var home_component_1 = require('./src/home/home.component');
 var meet_component_1 = require('./src/meet/meet.component');
@@ -33,6 +34,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 new_diver_component_1.NewDiverComponent,
                 divers_component_1.DiversComponent,
+                dive_scoring_component_1.DiveScoringComponent,
                 home_component_1.HomeComponent,
                 meet_component_1.MeetComponent,
                 navbar_component_1.NavbarComponent
