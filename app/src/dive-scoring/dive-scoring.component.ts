@@ -3,6 +3,7 @@ import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
+import { ScoresService } from '../standings/scores.service';
 
 @Component({
   selector: 'dive-scoring',
@@ -24,10 +25,12 @@ export class DiveScoringComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private diverService: DiverService) { }
+  constructor(private diverService: DiverService,
+              private scoresService: ScoresService) { }
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
+    this.scoresService.setDivers(this.divers);
 
     this.divers.push(new Diver(
       "Diver1", "M", [

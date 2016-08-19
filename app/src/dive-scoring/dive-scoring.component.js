@@ -12,9 +12,11 @@ var core_1 = require('@angular/core');
 var diver_1 = require('../diver/diver');
 var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
+var scores_service_1 = require('../standings/scores.service');
 var DiveScoringComponent = (function () {
-    function DiveScoringComponent(diverService) {
+    function DiveScoringComponent(diverService, scoresService) {
         this.diverService = diverService;
+        this.scoresService = scoresService;
         this.fulls = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         this.halfs = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5];
         this.scores = [];
@@ -24,6 +26,7 @@ var DiveScoringComponent = (function () {
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
+        this.scoresService.setDivers(this.divers);
         this.divers.push(new diver_1.Diver("Diver1", "M", [
             new dive_1.Dive('103', 'B', 1),
             new dive_1.Dive('203', 'B', 1),
@@ -77,7 +80,7 @@ var DiveScoringComponent = (function () {
             templateUrl: './app/src/dive-scoring/dive-scoring.html',
             styleUrls: ['./app/src/dive-scoring/dive-scoring.css']
         }), 
-        __metadata('design:paramtypes', [diver_service_1.DiverService])
+        __metadata('design:paramtypes', [diver_service_1.DiverService, scores_service_1.ScoresService])
     ], DiveScoringComponent);
     return DiveScoringComponent;
 }());

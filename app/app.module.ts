@@ -14,6 +14,7 @@ import { HomeComponent } from './src/home/home.component';
 import { MeetComponent } from './src/meet/meet.component';
 
 import { DiverService } from './src/divers/diver.service';
+import { ScoresService } from './src/standings/scores.service';
 
 import { routing } from './src/routes/app.routing'
 
@@ -34,7 +35,8 @@ import { routing } from './src/routes/app.routing'
     NavbarComponent
   ],
   providers: [
-    DiverService
+    DiverService,
+    ScoresService
   ],
   bootstrap: [ AppComponent ]
 })
