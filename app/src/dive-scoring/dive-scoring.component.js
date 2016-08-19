@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MeetComponent = (function () {
-    function MeetComponent() {
+var DiveScoringComponent = (function () {
+    function DiveScoringComponent() {
+        this.fulls = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        this.halfs = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5];
     }
-    MeetComponent = __decorate([
+    DiveScoringComponent = __decorate([
         core_1.Component({
-            selector: 'meet',
-            template: "\n    <h1>Meet</h1>\n    <dive-scoring></dive-scoring>\n  ",
-            styles: ["\n    h1 {\n      text-align:center;\n      padding-top:20px;\n    }\n  "]
+            selector: 'dive-scoring',
+            templateUrl: './app/src/dive-scoring/dive-scoring.html',
+            styleUrls: ['./app/src/dive-scoring/dive-scoring.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], MeetComponent);
-    return MeetComponent;
+    ], DiveScoringComponent);
+    return DiveScoringComponent;
 }());
-exports.MeetComponent = MeetComponent;
-//# sourceMappingURL=meet.component.js.map
+exports.DiveScoringComponent = DiveScoringComponent;
+//# sourceMappingURL=dive-scoring.component.js.map

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
   selector: 'meet',
   template: `
     <h1>Meet</h1>
+    <dive-scoring></dive-scoring>
   `,
   styles: [`
     h1 {
