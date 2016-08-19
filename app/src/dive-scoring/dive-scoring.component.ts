@@ -59,6 +59,7 @@ export class DiveScoringComponent implements OnInit {
 
   private next() {
     this.scores = [];
+    this.diverUp.addScore(this.dive.total);
     this.setDiver();
   }
 

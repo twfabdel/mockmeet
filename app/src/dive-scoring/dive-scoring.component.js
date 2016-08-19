@@ -46,6 +46,7 @@ var DiveScoringComponent = (function () {
     };
     DiveScoringComponent.prototype.next = function () {
         this.scores = [];
+        this.diverUp.addScore(this.dive.total);
         this.setDiver();
     };
     DiveScoringComponent.prototype.setDiver = function () {
