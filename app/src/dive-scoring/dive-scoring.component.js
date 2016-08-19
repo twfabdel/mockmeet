@@ -71,6 +71,7 @@ var DiveScoringComponent = (function () {
         this.diverUp.addScore(this.dive.total);
         this.setDiver();
         this.submitted = false;
+        this.diverService.toggleChange();
     };
     DiveScoringComponent.prototype.setDiver = function () {
         this.diverUp = this.divers[this.diverIndex];

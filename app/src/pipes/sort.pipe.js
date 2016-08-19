@@ -9,32 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var DiverService = (function () {
-    function DiverService() {
-        this.divers = [];
-        this.listChange = false;
+var DiverSortPipe = (function () {
+    function DiverSortPipe() {
     }
-    DiverService.prototype.getDivers = function () {
-        return this.divers;
+    DiverSortPipe.prototype.transform = function (array, args) {
+        array.sort(function (a, b) {
+            if (a.total < b.total) {
+                return -1;
+            }
+            else if (a.total > b.total) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+        return array;
     };
-    DiverService.prototype.addDiver = function (diver) {
-        this.divers.unshift(diver);
-    };
-    DiverService.prototype.deleteDiver = function (diver) {
-        var i = this.divers.indexOf(diver);
-        this.divers.splice(i, 1);
-    };
-    DiverService.prototype.toggleChange = function () {
-        this.listChange = !this.listChange;
-    };
-    DiverService.prototype.getChange = function () {
-        return this.listChange;
-    };
-    DiverService = __decorate([
-        core_1.Injectable(), 
+    DiverSortPipe = __decorate([
+        core_1.Pipe({
+            name: "sort"
+        }), 
         __metadata('design:paramtypes', [])
-    ], DiverService);
-    return DiverService;
+    ], DiverSortPipe);
+    return DiverSortPipe;
 }());
-exports.DiverService = DiverService;
-//# sourceMappingURL=diver.service.js.map
+exports.DiverSortPipe = DiverSortPipe;
+//# sourceMappingURL=sort.pipe.js.map

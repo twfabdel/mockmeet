@@ -4,6 +4,8 @@ import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
 
+import { StandingsComponent } from '../standings/standings.component';
+
 @Component({
   selector: 'dive-scoring',
   templateUrl: './app/src/dive-scoring/dive-scoring.html',
@@ -89,6 +91,7 @@ export class DiveScoringComponent implements OnInit {
     this.diverUp.addScore(this.dive.total);
     this.setDiver();
     this.submitted = false;
+    this.diverService.toggleChange();
   }
 
   private setDiver() {
