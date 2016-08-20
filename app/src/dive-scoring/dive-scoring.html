@@ -29,9 +29,12 @@
 
 <table>
   <tr>
-    <td id="scoresBox">
-      <h3>Scores: {{scores}}</h3>
-      <h3>Total: {{dive.total}}</h3>
+    <td id="scoresBox"> 
+      <ul>
+        <li>Scores: </li>
+        <li *ngFor="let score of scores"> {{score}} </li>
+      </ul>
+      <ul><li>Total: {{dive.total}}</li></ul>
       <button id="scoreSubmit" class="pushBtn" (click)="submit()">
         Submit Scores
       </button>
