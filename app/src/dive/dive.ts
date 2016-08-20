@@ -8,12 +8,28 @@ export class Dive {
               public pos: string,
               public level: number) {}
 
-  giveScore(scores: number[]) {
-    this.scoreList = scores;
-    this.total = 0;
+  giveScore(scoreList: number[]) {
+    this.scoreList = scoreList;
+    this.total = this.filterScores();
+  }
 
-    for(var i = 0; i < scores.length; i++) {
-      this.total += scores[i];
+  private filterScores() {
+    var scores = this.scoreList.slice(0);
+    scores.sort(this.sortNums);
+    
+    while(scores.length > 3) {
+      scores.pop();
+      scores.shift();
     }
+
+    var total = 0;
+    for(var i = 0; i < scores.length; i++) {
+      total += scores[i];
+    }
+    return total;
+  }
+
+  private sortNums(a, b) {
+    return a-b;
   }
 }

@@ -14,10 +14,10 @@ var DiverSortPipe = (function () {
     }
     DiverSortPipe.prototype.transform = function (array, args) {
         array.sort(function (a, b) {
-            if (a.total < b.total) {
+            if (a.total > b.total) {
                 return -1;
             }
-            else if (a.total > b.total) {
+            else if (a.total < b.total) {
                 return 1;
             }
             else {
@@ -28,7 +28,8 @@ var DiverSortPipe = (function () {
     };
     DiverSortPipe = __decorate([
         core_1.Pipe({
-            name: "sort"
+            name: "sort",
+            pure: false
         }), 
         __metadata('design:paramtypes', [])
     ], DiverSortPipe);

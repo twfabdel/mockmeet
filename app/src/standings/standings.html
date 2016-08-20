@@ -1,5 +1,5 @@
 <table>
-  <tr *ngFor="let diver of divers">
+  <tr *ngFor="let diver of divers | sort">
     <td>{{diver.name}}</td>
     <td>{{diver.total}}</td>
   </tr>
