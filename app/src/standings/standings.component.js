@@ -27,7 +27,7 @@ var StandingsComponent = (function () {
         core_1.Component({
             selector: 'standings',
             templateUrl: './app/src/standings/standings.html',
-            styles: ["\n    h1 {\n      padding-top:20px;\n    }\n  "],
+            styleUrls: ['./app/src/standings/standings.css'],
             pipes: [sort_pipe_1.DiverSortPipe]
         }), 
         __metadata('design:paramtypes', [diver_service_1.DiverService])

@@ -1,50 +1,52 @@
-<table>
-  <tr>
-    <td class="tableHeader" >
-      <span>{{diverUp.name}}</span> 
-    </td>
-    <td class="tableHeader" >
-      <span id="diveInfo">{{dive.num}}{{dive.pos}} {{dive.level}}m</span>
-    </td>
-  </tr>
-</table>
+<div>
+  <table>
+    <tr>
+      <td class="tableHeader" >
+        <span>{{diverUp.name}}</span> 
+      </td>
+      <td class="tableHeader" >
+        <span id="diveInfo">{{dive.num}}{{dive.pos}} {{dive.level}}m</span>
+      </td>
+    </tr>
+  </table>
 
-<table>
-  <tr>
-    <ul>
-      <li *ngFor="let score of fulls">
-        <button class="scores pushBtn" (click)="addScore(score)">{{score}}</button>
-      </li>
-    </ul>
-  </tr>
-  
-  <tr>
-    <ul>
-      <li *ngFor="let score of halfs">
-        <button class="scores pushBtn" (click)="addScore(score)">{{score}}</button>
-      </li>
-    </ul>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <td id="scoresBox"> 
+  <table>
+    <tr>
       <ul>
-        <li>Scores: </li>
-        <li *ngFor="let score of scores"> {{score}} </li>
+        <li *ngFor="let score of fulls">
+          <button class="scores pushBtn" (click)="addScore(score)">{{score}}</button>
+        </li>
       </ul>
-      <ul><li>Total: {{dive.total}}</li></ul>
-      <button id="scoreSubmit" class="pushBtn" (click)="submit()">
-        Submit Scores
-      </button>
-    </td>
-    <td valign="bottom">
-      <button id="nextDiver" class="pushBtn" (click)="next()">
-        Next Diver
-      </button>
-    </td>
-  </tr>
-</table>
+    </tr>
+    
+    <tr>
+      <ul>
+        <li *ngFor="let score of halfs">
+          <button class="scores pushBtn" (click)="addScore(score)">{{score}}</button>
+        </li>
+      </ul>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td id="scoresBox"> 
+        <ul>
+          <li>Scores: </li>
+          <li *ngFor="let score of scores"> {{score}} </li>
+        </ul>
+        <ul><li>Total: {{dive.total}}</li></ul>
+        <button id="scoreSubmit" class="pushBtn" (click)="submit()">
+          Submit Scores
+        </button>
+      </td>
+      <td valign="bottom">
+        <button id="nextDiver" class="pushBtn" (click)="next()">
+          Next Diver
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
 
 

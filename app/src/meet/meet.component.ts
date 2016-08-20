@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
       text-align:center;
       padding-top:20px;
     }
+    table {
+      width:100%;
+    }
   `]
 })
 

@@ -9,11 +9,7 @@ import { DiverSortPipe } from '../pipes/sort.pipe';
 @Component({
   selector: 'standings',
   templateUrl: './app/src/standings/standings.html',
-  styles: [`
-    h1 {
-      padding-top:20px;
-    }
-  `],
+  styleUrls: ['./app/src/standings/standings.css'],
   pipes: [ DiverSortPipe ]
 })
 
