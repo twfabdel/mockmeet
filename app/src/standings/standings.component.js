@@ -16,12 +16,7 @@ var StandingsComponent = (function () {
         this.diverService = diverService;
     }
     StandingsComponent.prototype.ngOnInit = function () {
-        this.divers = this.diverService.getDivers();
-    };
-    StandingsComponent.prototype.ngDoCheck = function () {
-        if (this.diverService.getChange()) {
-            this.diverService.toggleChange();
-        }
+        this.divers = this.diverService.getDivers().slice();
     };
     StandingsComponent = __decorate([
         core_1.Component({

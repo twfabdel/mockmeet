@@ -81,13 +81,6 @@ export class DiveScoringComponent implements OnInit {
     }
 
     this.dive.giveScore(this.scores);
-
-    this.diverIndex += 1;
-
-    if(this.diverIndex == this.divers.length) {
-      this.round += 1;
-      this.diverIndex = 0;
-    }
   }
 
   private next() {
@@ -96,11 +89,17 @@ export class DiveScoringComponent implements OnInit {
       return;
     }
 
+    this.diverIndex += 1;
+
+    if(this.diverIndex == this.divers.length) {
+      this.round += 1;
+      this.diverIndex = 0;
+    }
+
     this.scores = [];
     this.diverUp.addScore(this.dive.total);
     this.setDiver();
     this.submitted = false;
-    this.diverService.toggleChange();
   }
 
   private setDiver() {

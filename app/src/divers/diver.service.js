@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var DiverService = (function () {
     function DiverService() {
         this.divers = [];
-        this.listChange = false;
     }
     DiverService.prototype.getDivers = function () {
         return this.divers;
@@ -23,12 +22,6 @@ var DiverService = (function () {
     DiverService.prototype.deleteDiver = function (diver) {
         var i = this.divers.indexOf(diver);
         this.divers.splice(i, 1);
-    };
-    DiverService.prototype.toggleChange = function () {
-        this.listChange = !this.listChange;
-    };
-    DiverService.prototype.getChange = function () {
-        return this.listChange;
     };
     DiverService = __decorate([
         core_1.Injectable(), 

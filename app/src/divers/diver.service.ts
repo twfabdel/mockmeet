@@ -7,8 +7,6 @@ import { Dive } from '../dive/dive';
 export class DiverService {
   private divers = [];
 
-  private listChange = false;
-
   getDivers() {
     return this.divers;
   }
@@ -20,13 +18,5 @@ export class DiverService {
   deleteDiver(diver: Diver) {
     var i = this.divers.indexOf(diver);
     this.divers.splice(i, 1);
-  }
-
-  toggleChange() {
-    this.listChange = !this.listChange;
-  }
-
-  getChange() {
-    return this.listChange;
   }
 }

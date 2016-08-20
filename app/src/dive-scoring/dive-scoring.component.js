@@ -63,22 +63,21 @@ var DiveScoringComponent = (function () {
             return;
         }
         this.dive.giveScore(this.scores);
-        this.diverIndex += 1;
-        if (this.diverIndex == this.divers.length) {
-            this.round += 1;
-            this.diverIndex = 0;
-        }
     };
     DiveScoringComponent.prototype.next = function () {
         if (!this.submitted) {
             alert("Please enter scores or submit the score entered.");
             return;
         }
+        this.diverIndex += 1;
+        if (this.diverIndex == this.divers.length) {
+            this.round += 1;
+            this.diverIndex = 0;
+        }
         this.scores = [];
         this.diverUp.addScore(this.dive.total);
         this.setDiver();
         this.submitted = false;
-        this.diverService.toggleChange();
     };
     DiveScoringComponent.prototype.setDiver = function () {
         this.diverUp = this.divers[this.diverIndex];
