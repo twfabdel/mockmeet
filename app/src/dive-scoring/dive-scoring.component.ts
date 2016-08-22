@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
+
+import { StandingsComponent } from '../standings/standings.component';
 
 @Component({
   selector: 'dive-scoring',
@@ -24,10 +28,39 @@ export class DiveScoringComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private diverService: DiverService) { }
+  constructor(private diverService: DiverService,
+              private router: Router) { }
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
+
+//  TODO: Uncomment after testing
+//    if(this.divers.length == 0) {
+//      alert("Please enter one or more divers into this meet.");
+//      this.router.navigate(['/home']);
+//    }
+
+    this.divers.push(new Diver(
+      "Diver1", "M", [
+        new Dive('103', 'B', 1),
+        new Dive('203', 'B', 1),
+        new Dive('303', 'B', 1),
+        new Dive('403', 'B', 1),
+        new Dive('5132', 'D', 1),
+        new Dive('5134', 'D', 1)
+      ]
+    ));
+    this.divers.push(new Diver(
+      "Diver2", "M", [
+        new Dive('103', 'B', 1),
+        new Dive('203', 'B', 1),
+        new Dive('303', 'B', 1),
+        new Dive('403', 'B', 1),
+        new Dive('5132', 'D', 1),
+        new Dive('5134', 'D', 1)
+      ]
+    ));
+
     this.setDiver();
   }
 
@@ -43,11 +76,18 @@ export class DiveScoringComponent implements OnInit {
     this.submitted = true;
 
     if(this.scores.length % 2 == 0) {
-      alert("Please enter an odd number of scores");
+      alert("Please enter an odd number of scores.");
       return;
     }
 
     this.dive.giveScore(this.scores);
+  }
+
+  private next() {
+    if(!this.submitted) {
+      alert("Please enter scores or submit the score entered.");
+      return;
+    }
 
     this.diverIndex += 1;
 
@@ -55,12 +95,11 @@ export class DiveScoringComponent implements OnInit {
       this.round += 1;
       this.diverIndex = 0;
     }
-  }
 
-  private next() {
     this.scores = [];
     this.diverUp.addScore(this.dive.total);
     this.setDiver();
+    this.submitted = false;
   }
 
   private setDiver() {

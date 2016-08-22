@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Diver</th>
+    <th>Total</th>
+  </tr>
+  <tr *ngFor="let diver of divers | sort">
+    <td>{{diver.name}}</td>
+    <td>{{diver.total}}</td>
+  </tr>
+</table>

@@ -6,6 +6,7 @@ import { AppComponent }  from './app.component';
 import { NewDiverComponent } from './src/new-diver/new-diver.component';
 import { DiversComponent } from './src/divers/divers.component';
 import { DiveScoringComponent } from './src/dive-scoring/dive-scoring.component';
+import { StandingsComponent } from './src/standings/standings.component'
 
 import { NavbarComponent } from './src/navbar/navbar.component';
 
@@ -27,6 +28,7 @@ import { routing } from './src/routes/app.routing'
     NewDiverComponent,
     DiversComponent,
     DiveScoringComponent,
+    StandingsComponent,
     HomeComponent,
     MeetComponent,
     NavbarComponent

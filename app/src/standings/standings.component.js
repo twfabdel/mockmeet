@@ -9,18 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MeetComponent = (function () {
-    function MeetComponent() {
+var diver_service_1 = require('../divers/diver.service');
+var sort_pipe_1 = require('../pipes/sort.pipe');
+var StandingsComponent = (function () {
+    function StandingsComponent(diverService) {
+        this.diverService = diverService;
     }
-    MeetComponent = __decorate([
+    StandingsComponent.prototype.ngOnInit = function () {
+        this.divers = this.diverService.getDivers().slice();
+    };
+    StandingsComponent = __decorate([
         core_1.Component({
-            selector: 'meet',
-            templateUrl: './app/src/meet/meet.html',
-            styles: ["\n    h1 {\n      text-align:center;\n      padding-top:20px;\n    }\n    table {\n      width:100%;\n    }\n  "]
+            selector: 'standings',
+            templateUrl: './app/src/standings/standings.html',
+            styleUrls: ['./app/src/standings/standings.css'],
+            pipes: [sort_pipe_1.DiverSortPipe]
         }), 
-        __metadata('design:paramtypes', [])
-    ], MeetComponent);
-    return MeetComponent;
+        __metadata('design:paramtypes', [diver_service_1.DiverService])
+    ], StandingsComponent);
+    return StandingsComponent;
 }());
-exports.MeetComponent = MeetComponent;
-//# sourceMappingURL=meet.component.js.map
+exports.StandingsComponent = StandingsComponent;
+//# sourceMappingURL=standings.component.js.map

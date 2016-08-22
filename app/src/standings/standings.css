@@ -1,0 +1,24 @@
+table {
+  padding:20px;
+  width:400px;
+
+  counter-reset: rowNumber;
+}
+
+tr:nth-child(even) {
+  background: lightgray;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+table tr:not(:first-child) {
+    counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}

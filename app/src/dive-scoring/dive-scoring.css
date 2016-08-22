@@ -1,3 +1,7 @@
+div {
+  width:500px;
+}
+
 ul li {
   display:inline;
   padding:3px;
@@ -35,6 +39,12 @@ button#nextDiver {
 #scoresBox {
   width:400px;
   height:auto;
+}
+
+#scoresBox ul {
+  font-weight:bold;
+  text-align:left;
+  font-size:20px;
 }
 
 .tableHeader {
