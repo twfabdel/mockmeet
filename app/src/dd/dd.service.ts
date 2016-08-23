@@ -1,13 +1,11 @@
 import { Injectable} from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import { Observable }     from 'rxjs/Observable';
+import ddJson from '/dd.json!json';
 
 @Injectable()
 export class DdService {
   constructor (private http: Http) { }
-
-  private ddUrl = 'dd-sheet.csv';
 
   getDD() {
     var data;
