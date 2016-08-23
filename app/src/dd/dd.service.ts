@@ -1,18 +1,17 @@
 import { Injectable} from '@angular/core';
 import { Http, Response } from '@angular/http';
 
-import ddJson from '/dd.json!json';
+import { DDMAP } from './dd';
 
 @Injectable()
 export class DdService {
-  constructor (private http: Http) { }
+  private http;
+
+  constructor (private http: Http) { 
+    this.http = http;
+  }
 
   getDD() {
-    var data;
-    this.http.get(this.ddUrl)
-      .then(function mySucces(response) {
-          data = response.data;
-      });
-    return data;
+    console.log(DDMAP["101"]["1B"]);
   }
 }

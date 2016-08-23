@@ -1,4 +1,4 @@
-{
+export const DDMAP: Object = {
   "101": {
     "1A": 1.4,
     "1B": 1.3,

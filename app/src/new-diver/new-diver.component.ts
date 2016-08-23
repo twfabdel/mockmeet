@@ -22,7 +22,7 @@ export class NewDiverComponent implements OnInit {
     this.setPosition();
     this.setLevel();
 
-    console.log(this.ddService.getDD());
+    this.ddService.getDD();
   }
 
   newDiver() {

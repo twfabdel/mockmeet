@@ -23,7 +23,7 @@ var NewDiverComponent = (function () {
         this.sex = 'F';
         this.setPosition();
         this.setLevel();
-        console.log(this.ddService.getDD());
+        this.ddService.getDD();
     };
     NewDiverComponent.prototype.newDiver = function () {
         var dives = [];

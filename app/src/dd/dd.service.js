@@ -10,18 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
+var dd_1 = require('./dd');
 var DdService = (function () {
     function DdService(http) {
         this.http = http;
-        this.ddUrl = 'dd-sheet.csv';
+        this.http = http;
     }
     DdService.prototype.getDD = function () {
-        var data;
-        this.http.get(this.ddUrl)
-            .then(function mySucces(response) {
-            data = response.data;
-        });
-        return data;
+        console.log(dd_1.DDMAP["101"]["1B"]);
     };
     DdService = __decorate([
         core_1.Injectable(), 
