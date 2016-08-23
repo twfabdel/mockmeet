@@ -3,6 +3,7 @@ import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
+import { DdService } from '../dd/dd.service';
 
 @Component({
   selector: 'new-diver',
@@ -13,12 +14,15 @@ import { DiverService } from '../divers/diver.service';
 export class NewDiverComponent implements OnInit {
   public divers = [];
 
-  constructor(private diverService: DiverService) { }
+  constructor(private diverService: DiverService,
+              private ddService: DdService) { }
 
   ngOnInit() {
     this.sex='F';
     this.setPosition();
     this.setLevel();
+
+    console.log(this.ddService.getDD());
   }
 
   newDiver() {

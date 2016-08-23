@@ -12,15 +12,18 @@ var core_1 = require('@angular/core');
 var diver_1 = require('../diver/diver');
 var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
+var dd_service_1 = require('../dd/dd.service');
 var NewDiverComponent = (function () {
-    function NewDiverComponent(diverService) {
+    function NewDiverComponent(diverService, ddService) {
         this.diverService = diverService;
+        this.ddService = ddService;
         this.divers = [];
     }
     NewDiverComponent.prototype.ngOnInit = function () {
         this.sex = 'F';
         this.setPosition();
         this.setLevel();
+        console.log(this.ddService.getDD());
     };
     NewDiverComponent.prototype.newDiver = function () {
         var dives = [];
@@ -69,7 +72,7 @@ var NewDiverComponent = (function () {
             templateUrl: './app/src/new-diver/new-diver.html',
             styleUrls: ['./app/src/new-diver/new-diver.css']
         }), 
-        __metadata('design:paramtypes', [diver_service_1.DiverService])
+        __metadata('design:paramtypes', [diver_service_1.DiverService, dd_service_1.DdService])
     ], NewDiverComponent);
     return NewDiverComponent;
 }());

@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { NewDiverComponent } from './src/new-diver/new-diver.component';
@@ -14,6 +15,7 @@ import { HomeComponent } from './src/home/home.component';
 import { MeetComponent } from './src/meet/meet.component';
 
 import { DiverService } from './src/divers/diver.service';
+import { DdService } from './src/dd/dd.service';
 
 import { routing } from './src/routes/app.routing'
 
@@ -21,7 +23,9 @@ import { routing } from './src/routes/app.routing'
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    HttpModule,
+    JsonpModule
   ],
   declarations: [
     AppComponent,
@@ -34,7 +38,8 @@ import { routing } from './src/routes/app.routing'
     NavbarComponent
   ],
   providers: [
-    DiverService
+    DiverService,
+    DdService
   ],
   bootstrap: [ AppComponent ]
 })
