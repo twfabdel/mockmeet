@@ -16,8 +16,13 @@ var DdService = (function () {
         this.http = http;
         this.http = http;
     }
-    DdService.prototype.getDD = function () {
-        console.log(dd_1.DDMAP["101"]["1B"]);
+    DdService.prototype.getDD = function (num, pos, level) {
+        var dive = dd_1.DDMAP[num];
+        if (dive === undefined) {
+            return '';
+        }
+        else
+            return dive[level + pos];
     };
     DdService = __decorate([
         core_1.Injectable(), 

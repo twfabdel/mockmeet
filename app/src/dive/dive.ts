@@ -2,11 +2,10 @@ export class Dive {
   public scoreList: number[];
   public total: number;
 
-  public dd: number;
-
   constructor(public num: number,
               public pos: string,
-              public level: number) {}
+              public level: number,
+              public dd: number) {}
 
   giveScore(scoreList: number[]) {
     this.scoreList = scoreList;

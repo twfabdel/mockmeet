@@ -1,9 +1,10 @@
 "use strict";
 var Dive = (function () {
-    function Dive(num, pos, level) {
+    function Dive(num, pos, level, dd) {
         this.num = num;
         this.pos = pos;
         this.level = level;
+        this.dd = dd;
     }
     Dive.prototype.giveScore = function (scoreList) {
         this.scoreList = scoreList;

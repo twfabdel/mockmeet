@@ -1,6 +1,6 @@
 import { Injectable} from '@angular/core';
 import { Http, Response } from '@angular/http';
-
+ 
 import { DDMAP } from './dd';
 
 @Injectable()
@@ -11,7 +11,9 @@ export class DdService {
     this.http = http;
   }
 
-  getDD() {
-    console.log(DDMAP["101"]["1B"]);
-  }
+  getDD(num: string, pos: string, level: string) {
+    let dive = DDMAP[num];
+    if(dive === undefined) {
+      return '';
+    } else return dive[level + pos];
 }

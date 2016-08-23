@@ -21,8 +21,6 @@ export class NewDiverComponent implements OnInit {
     this.sex='F';
     this.setPosition();
     this.setLevel();
-
-    this.ddService.getDD();
   }
 
   newDiver() {
