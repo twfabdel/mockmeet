@@ -13,6 +13,10 @@
   min-width:90px;
 }
 
+pre {
+  margin:3px;
+}
+
 .diverList {
   counter-reset:li; /* Initiate a counter */
   padding-left:20px; /* Remove the default left padding */

@@ -12,7 +12,7 @@
           </tr>
           <tr>  
             <td *ngFor='let dive of diver.list'>
-              {{dive.num}}{{dive.pos}} <br> {{dive.level}}m 
+              {{dive.num}}{{dive.pos}} <br> {{dive.level}}m {{dive.dd | toFloat}}
             </td>
           </tr>
 

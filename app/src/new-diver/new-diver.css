@@ -2,6 +2,10 @@
   float:left;
 }
 
+ol {
+  padding-left:20;
+}
+
 li {
   padding: 5px;
 }
@@ -15,6 +19,24 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+.dd {
+  float:right;
+  font-size:14px;
+}
+
 .headerInfo input{
   width:100px;
+}
+
+#totalDD {
+  width:100%;
+}
+
+#totalDD #label {
+  text-align:right;
+}
+
+#totalDD #val {
+  width:35px;
+  text-align:right;
 }

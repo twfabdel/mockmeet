@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var diver_1 = require('../diver/diver');
 var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
+var toFloat_pipe_1 = require('../pipes/toFloat.pipe');
 var DiveScoringComponent = (function () {
     function DiveScoringComponent(diverService, router) {
         this.diverService = diverService;
@@ -32,20 +33,20 @@ var DiveScoringComponent = (function () {
         //      this.router.navigate(['/home']);
         //    }
         this.divers.push(new diver_1.Diver("Diver1", "M", [
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('203', 'B', 1),
-            new dive_1.Dive('303', 'B', 1),
-            new dive_1.Dive('403', 'B', 1),
-            new dive_1.Dive('5132', 'D', 1),
-            new dive_1.Dive('5134', 'D', 1)
+            new dive_1.Dive('103', 'B', 1, 2.0),
+            new dive_1.Dive('203', 'B', 1, 1.9),
+            new dive_1.Dive('303', 'B', 1, 3.0),
+            new dive_1.Dive('403', 'B', 1, 4.1),
+            new dive_1.Dive('5132', 'D', 1, 4.4),
+            new dive_1.Dive('5134', 'D', 1, 2.2)
         ]));
         this.divers.push(new diver_1.Diver("Diver2", "M", [
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('203', 'B', 1),
-            new dive_1.Dive('303', 'B', 1),
-            new dive_1.Dive('403', 'B', 1),
-            new dive_1.Dive('5132', 'D', 1),
-            new dive_1.Dive('5134', 'D', 1)
+            new dive_1.Dive('103', 'B', 1, 1.0),
+            new dive_1.Dive('203', 'B', 1, 1.1),
+            new dive_1.Dive('303', 'B', 1, 3.2),
+            new dive_1.Dive('403', 'B', 1, 3.3),
+            new dive_1.Dive('5132', 'D', 1, 3.1),
+            new dive_1.Dive('5134', 'D', 1, 1.0)
         ]));
         this.setDiver();
     };
@@ -87,7 +88,8 @@ var DiveScoringComponent = (function () {
         core_1.Component({
             selector: 'dive-scoring',
             templateUrl: './app/src/dive-scoring/dive-scoring.html',
-            styleUrls: ['./app/src/dive-scoring/dive-scoring.css']
+            styleUrls: ['./app/src/dive-scoring/dive-scoring.css'],
+            pipes: [toFloat_pipe_1.ToFloatPipe]
         }), 
         __metadata('design:paramtypes', [diver_service_1.DiverService, router_1.Router])
     ], DiveScoringComponent);
