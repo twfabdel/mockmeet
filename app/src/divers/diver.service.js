@@ -17,7 +17,11 @@ var DiverService = (function () {
         return this.divers;
     };
     DiverService.prototype.addDiver = function (diver) {
-        this.divers.unshift(diver);
+        if (diver.sex == 'M') {
+            this.divers.unshift(diver);
+        }
+        else
+            this.divers.push(diver);
     };
     DiverService.prototype.deleteDiver = function (diver) {
         var i = this.divers.indexOf(diver);
