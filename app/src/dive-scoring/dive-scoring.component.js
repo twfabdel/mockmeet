@@ -13,6 +13,7 @@ var router_1 = require('@angular/router');
 var diver_1 = require('../diver/diver');
 var dive_1 = require('../dive/dive');
 var diver_service_1 = require('../divers/diver.service');
+var toFloat_pipe_1 = require('../pipes/toFloat.pipe');
 var DiveScoringComponent = (function () {
     function DiveScoringComponent(diverService, router) {
         this.diverService = diverService;
@@ -87,7 +88,8 @@ var DiveScoringComponent = (function () {
         core_1.Component({
             selector: 'dive-scoring',
             templateUrl: './app/src/dive-scoring/dive-scoring.html',
-            styleUrls: ['./app/src/dive-scoring/dive-scoring.css']
+            styleUrls: ['./app/src/dive-scoring/dive-scoring.css'],
+            pipes: [toFloat_pipe_1.ToFloatPipe]
         }), 
         __metadata('design:paramtypes', [diver_service_1.DiverService, router_1.Router])
     ], DiveScoringComponent);

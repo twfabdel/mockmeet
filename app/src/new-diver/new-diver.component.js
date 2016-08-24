@@ -32,7 +32,6 @@ var NewDiverComponent = (function () {
         if (this.sex == "M") {
             bounds = 6;
         }
-        console.log("before the loop");
         var i = 0;
         while (i < bounds) {
             var ddObj = document.getElementById('dd' + i);
@@ -41,9 +40,7 @@ var NewDiverComponent = (function () {
                 return;
             }
             var dd = parseFloat(ddObj.innerHTML);
-            console.log(dd);
             if (!dd) {
-                console.log("gud");
                 alert("Please enter a valid dive for dive number " + (i + 1) + ".");
                 return;
             }
@@ -88,6 +85,27 @@ var NewDiverComponent = (function () {
         this.level3 = '1';
         this.level4 = '1';
         this.level5 = '1';
+    };
+    NewDiverComponent.prototype.totalDD = function () {
+        var bounds = 5;
+        if (this.sex == "M") {
+            bounds = 6;
+        }
+        var total = 0;
+        var i = 0;
+        while (i < bounds) {
+            var ddObj = document.getElementById('dd' + i);
+            i += 1;
+            if (!ddObj) {
+                continue;
+            }
+            var dd = parseFloat(ddObj.innerHTML);
+            if (!dd) {
+                continue;
+            }
+            total += dd;
+        }
+        return Math.round(total * 10) / 10;
     };
     NewDiverComponent = __decorate([
         core_1.Component({

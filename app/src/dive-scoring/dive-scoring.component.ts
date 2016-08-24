@@ -6,12 +6,13 @@ import { Dive } from '../dive/dive';
 
 import { DiverService } from '../divers/diver.service';
 
-import { StandingsComponent } from '../standings/standings.component';
+import { ToFloatPipe } from '../pipes/toFloat.pipe';
 
 @Component({
   selector: 'dive-scoring',
   templateUrl: './app/src/dive-scoring/dive-scoring.html',
-  styleUrls: ['./app/src/dive-scoring/dive-scoring.css']
+  styleUrls: ['./app/src/dive-scoring/dive-scoring.css'],
+  pipes: [ ToFloatPipe ]
 })
 
 export class DiveScoringComponent implements OnInit {

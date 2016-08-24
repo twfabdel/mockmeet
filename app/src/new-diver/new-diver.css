@@ -27,3 +27,16 @@ input:-webkit-autofill {
 .headerInfo input{
   width:100px;
 }
+
+#totalDD {
+  width:100%;
+}
+
+#totalDD #label {
+  text-align:right;
+}
+
+#totalDD #val {
+  width:35px;
+  text-align:right;
+}

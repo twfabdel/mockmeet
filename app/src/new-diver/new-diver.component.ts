@@ -35,7 +35,6 @@ export class NewDiverComponent implements OnInit {
       bounds = 6;
     }
 
-    console.log("before the loop");
     var i = 0;
     while(i < bounds) {
       var ddObj = document.getElementById('dd' + i);
@@ -44,9 +43,7 @@ export class NewDiverComponent implements OnInit {
         return;
       }
       var dd = parseFloat(ddObj.innerHTML);
-      console.log(dd);
       if(!dd) {
-        console.log("gud");
         alert("Please enter a valid dive for dive number " + (i+1) + ".");
         return;
       }
@@ -101,4 +98,29 @@ export class NewDiverComponent implements OnInit {
     this.level4='1';
     this.level5='1';
   }
+
+  private totalDD() {
+    var bounds = 5;
+    if(this.sex=="M") {
+      bounds = 6;
+    }
+
+    var total = 0;
+    var i = 0;
+    while(i < bounds) {
+      var ddObj = document.getElementById('dd' + i);
+      i += 1;
+      if(!ddObj) {
+        continue;
+      }
+      var dd = parseFloat(ddObj.innerHTML);
+      if(!dd) {
+        continue;
+      }
+      
+      total += dd;
+    }
+    return Math.round(total * 10)/10;
+  }
+
 }
