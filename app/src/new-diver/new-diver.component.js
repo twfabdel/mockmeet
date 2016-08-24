@@ -26,13 +26,13 @@ var NewDiverComponent = (function () {
     };
     NewDiverComponent.prototype.newDiver = function () {
         var dives = [];
-        dives.push(new dive_1.Dive(this.dive0, this.pos0, this.level0));
-        dives.push(new dive_1.Dive(this.dive1, this.pos1, this.level1));
-        dives.push(new dive_1.Dive(this.dive2, this.pos2, this.level2));
-        dives.push(new dive_1.Dive(this.dive3, this.pos3, this.level3));
-        dives.push(new dive_1.Dive(this.dive4, this.pos4, this.level4));
+        dives.push(new dive_1.Dive(this.dive0, this.pos0, this.level0, document.getElementById('dd0').innerHTML));
+        dives.push(new dive_1.Dive(this.dive1, this.pos1, this.level1, document.getElementById('dd1').innerHTML));
+        dives.push(new dive_1.Dive(this.dive2, this.pos2, this.level2, document.getElementById('dd2').innerHTML));
+        dives.push(new dive_1.Dive(this.dive3, this.pos3, this.level3, document.getElementById('dd3').innerHTML));
+        dives.push(new dive_1.Dive(this.dive4, this.pos4, this.level4, document.getElementById('dd4').innerHTML));
         if (this.sex == "M") {
-            dives.push(new dive_1.Dive(this.dive5, this.pos5, this.level5));
+            dives.push(new dive_1.Dive(this.dive5, this.pos5, this.level5, document.getElementById('dd5').innerHTML));
         }
         this.diverService.addDiver(new diver_1.Diver(this.diverName, this.sex, dives));
         this.resetForm();

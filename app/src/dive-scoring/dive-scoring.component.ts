@@ -42,22 +42,22 @@ export class DiveScoringComponent implements OnInit {
 
     this.divers.push(new Diver(
       "Diver1", "M", [
-        new Dive('103', 'B', 1),
-        new Dive('203', 'B', 1),
-        new Dive('303', 'B', 1),
-        new Dive('403', 'B', 1),
-        new Dive('5132', 'D', 1),
-        new Dive('5134', 'D', 1)
+        new Dive('103', 'B', 1, 2.0),
+        new Dive('203', 'B', 1, 1.9),
+        new Dive('303', 'B', 1, 3.0),
+        new Dive('403', 'B', 1, 4.1),
+        new Dive('5132', 'D', 1, 4.4),
+        new Dive('5134', 'D', 1, 2.2)
       ]
     ));
     this.divers.push(new Diver(
       "Diver2", "M", [
-        new Dive('103', 'B', 1),
-        new Dive('203', 'B', 1),
-        new Dive('303', 'B', 1),
-        new Dive('403', 'B', 1),
-        new Dive('5132', 'D', 1),
-        new Dive('5134', 'D', 1)
+        new Dive('103', 'B', 1, 1.0),
+        new Dive('203', 'B', 1, 1.1),
+        new Dive('303', 'B', 1, 3.2),
+        new Dive('403', 'B', 1, 3.3),
+        new Dive('5132', 'D', 1, 3.1),
+        new Dive('5134', 'D', 1, 1.0)
       ]
     ));
 

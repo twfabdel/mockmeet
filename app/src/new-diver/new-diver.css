@@ -2,6 +2,10 @@
   float:left;
 }
 
+ol {
+  padding-left:20;
+}
+
 li {
   padding: 5px;
 }
@@ -13,6 +17,11 @@ input.form-control {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.dd {
+  float:right;
+  font-size:14px;
 }
 
 .headerInfo input{

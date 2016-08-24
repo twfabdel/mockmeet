@@ -5,6 +5,10 @@ var Dive = (function () {
         this.pos = pos;
         this.level = level;
         this.dd = dd;
+        this.ddStr = dd + "";
+        if (dd % 1 == 0) {
+            this.ddStr += ".0";
+        }
     }
     Dive.prototype.giveScore = function (scoreList) {
         this.scoreList = scoreList;
@@ -21,7 +25,8 @@ var Dive = (function () {
         for (var i = 0; i < scores.length; i++) {
             total += scores[i];
         }
-        return total;
+        total *= this.dd;
+        return parseFloat((Math.round((total * 1000) / 10) / 100).toFixed(2));
     };
     Dive.prototype.sortNums = function (a, b) {
         return a - b;

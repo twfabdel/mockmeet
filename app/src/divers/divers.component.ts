@@ -20,11 +20,11 @@ export class DiversComponent implements OnInit {
 
     this.divers.push(new Diver(
       "Diver2", "F", [
-        new Dive('103', 'B', 1),
-        new Dive('203', 'B', 1),
-        new Dive('303', 'B', 1),
-        new Dive('403', 'B', 1),
-        new Dive('105', 'B', 1)
+        new Dive('103', 'B', 1, 1.1),
+        new Dive('203', 'B', 1, 1.1),
+        new Dive('303', 'B', 1, 1.1),
+        new Dive('403', 'B', 1, 1.1),
+        new Dive('105', 'B', 1, 1.1)
       ]
     ));
   }

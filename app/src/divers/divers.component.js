@@ -19,11 +19,11 @@ var DiversComponent = (function () {
     DiversComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
         this.divers.push(new diver_1.Diver("Diver2", "F", [
-            new dive_1.Dive('103', 'B', 1),
-            new dive_1.Dive('203', 'B', 1),
-            new dive_1.Dive('303', 'B', 1),
-            new dive_1.Dive('403', 'B', 1),
-            new dive_1.Dive('105', 'B', 1)
+            new dive_1.Dive('103', 'B', 1, 1.1),
+            new dive_1.Dive('203', 'B', 1, 1.1),
+            new dive_1.Dive('303', 'B', 1, 1.1),
+            new dive_1.Dive('403', 'B', 1, 1.1),
+            new dive_1.Dive('105', 'B', 1, 1.1)
         ]));
     };
     DiversComponent.prototype.deleteDiver = function (diver) {

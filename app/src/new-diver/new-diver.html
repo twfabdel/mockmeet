@@ -29,7 +29,9 @@
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
 
-            <span> {{ ddService.getDD(dive0, pos0, level0) }} </span>
+            <div id="dd0" class="dd"> 
+              {{ ddService.getDD(dive0, pos0, level0) }} 
+            </div>
           
           </div>
         </li>
@@ -50,6 +52,10 @@
                 name="dive level 1" class="form-control" required>
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
+
+            <div id="dd1" class="dd"> 
+              {{ ddService.getDD(dive1, pos1, level1) }} 
+            </div>
           
           </div>
         </li>
@@ -70,6 +76,10 @@
                 name="dive level 2" class="form-control" required>
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
+
+            <div id="dd2" class="dd"> 
+              {{ ddService.getDD(dive2, pos2, level2) }} 
+            </div>
           
           </div>
         </li>
@@ -90,6 +100,10 @@
                 name="dive level 3" class="form-control" required>
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
+
+            <div id="dd3" class="dd"> 
+              {{ ddService.getDD(dive3, pos3, level3) }} 
+            </div>
           
           </div>
         </li>
@@ -110,6 +124,10 @@
                 name="dive level 4" class="form-control" required>
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
+
+            <div id="dd4" class="dd"> 
+              {{ ddService.getDD(dive4, pos4, level4) }} 
+            </div>
           
           </div>
         </li>
@@ -130,6 +148,10 @@
                 name="dive level 5" class="form-control" required>
               <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
             </select>
+
+            <div id="dd5" class="dd"> 
+              {{ ddService.getDD(dive5, pos5, level5) }} 
+            </div>
           
           </div>
         </li>
