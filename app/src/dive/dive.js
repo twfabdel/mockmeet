@@ -5,10 +5,6 @@ var Dive = (function () {
         this.pos = pos;
         this.level = level;
         this.dd = dd;
-        this.ddStr = dd + "";
-        if (dd % 1 == 0) {
-            this.ddStr += ".0";
-        }
     }
     Dive.prototype.giveScore = function (scoreList) {
         this.scoreList = scoreList;

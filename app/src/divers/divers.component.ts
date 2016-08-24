@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
 
+import { ToFloatPipe } '../pipes/toFloat.pipe';
+
 import { DiverService } from '../divers/diver.service';
 
 @Component({
   selector: 'divers',
   templateUrl: './app/src/divers/divers.html', 
-  styleUrls: ['./app/src/divers/divers.css']
+  styleUrls: ['./app/src/divers/divers.css'],
+  pipes: [ ToFloatPipe ]
 })
 
 export class DiversComponent implements OnInit {
@@ -20,11 +23,11 @@ export class DiversComponent implements OnInit {
 
     this.divers.push(new Diver(
       "Diver2", "F", [
-        new Dive('103', 'B', 1, 1.1),
-        new Dive('203', 'B', 1, 1.1),
-        new Dive('303', 'B', 1, 1.1),
+        new Dive('103', 'B', 1, 1),
+        new Dive('203', 'B', 1, 2),
+        new Dive('303', 'B', 1, 3),
         new Dive('403', 'B', 1, 1.1),
-        new Dive('105', 'B', 1, 1.1)
+        new Dive('105', 'B', 1, 2.1)
       ]
     ));
   }
