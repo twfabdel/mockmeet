@@ -22,4 +22,10 @@ export class StandingsComponent implements OnInit{
     this.divers = this.diverService.getDivers().slice();
   }
 
+  private scoreToString(score: number) : string {
+    if(score == 0) return "0.00";
+    var str = (Math.round(score * 100)).toString();
+    return str.slice(0, str.length-2) + "." + str.slice(-2);
+  } 
+
 }

@@ -28,6 +28,7 @@ export class DiveScoringComponent implements OnInit {
   divers: Diver[];
 
   submitted = false;
+  running = true;
 
   constructor(private diverService: DiverService,
               private router: Router) { }
@@ -105,6 +106,11 @@ export class DiveScoringComponent implements OnInit {
 
   private setDiver() {
     this.diverUp = this.divers[this.diverIndex];
-    this.dive = this.diverUp.list[this.round];
+    var temp = this.diverUp.list[this.round];
+    if(!temp) {
+      this.running = false;
+      return;
+    }
+    this.dive = temp;
   }
 }
