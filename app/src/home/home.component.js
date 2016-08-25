@@ -17,7 +17,7 @@ var HomeComponent = (function () {
         this.router = router;
         this.title = 'Divers';
     }
-    HomeComponent.prototype.newMeet = function () {
+    HomeComponent.prototype.startMeet = function () {
         if (this.diverService.getDivers().length == 0) {
             alert("Please enter one or more divers into this meet.");
         }
