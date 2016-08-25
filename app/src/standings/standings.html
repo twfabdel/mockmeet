@@ -1,10 +1,10 @@
 <table>
   <tr>
-    <th>Diver</th>
-    <th>Total</th>
+    <th id="nameHeader">Diver</th>
+    <th id="totalHeader">Total</th>
   </tr>
   <tr *ngFor="let diver of divers | sort">
-    <td>{{ diver.name }}</td>
-    <td>{{ scoreToString(diver.total) }}</td>
+    <td id="name">{{ diver.name }}</td>
+    <td id="total">{{ scoreToString(diver.total) }}</td>
   </tr>
 </table>
