@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Diver } from '../diver/diver';
 import { Dive } from '../dive/dive';
@@ -30,16 +29,10 @@ export class DiveScoringComponent implements OnInit {
   submitted = false;
   running = true;
 
-  constructor(private diverService: DiverService,
-              private router: Router) { }
+  constructor(private diverService: DiverService) { }
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
-
-    if(this.divers.length == 0) {
-      alert("Please enter one or more divers into this meet.");
-      this.router.navigate(['/home']);
-    }
   }
 
   private addScore(score: number) {
