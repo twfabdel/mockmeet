@@ -1,16 +1,13 @@
 {
-  "name": "mock-meet",
+  "name": "angular2-quickstart",
   "version": "1.0.0",
-  "private": false,
-  "author": "Tarek-Abdelghany",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings",
-    "test": "grunt test"
+    "typings": "typings"
   },
   "license": "ISC",
   "dependencies": {
@@ -30,8 +27,7 @@
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12",
     "angular2-in-memory-web-api": "0.0.15",
-    "bootstrap": "^3.3.6",
-    "express": "4.13.3"
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
@@ -42,6 +38,5 @@
   "engines": {
     "node":"6.2.2",
     "npm":"3.10.7"
-  },
-  "cacheDirectories": ["node_modules"]
+  }
 }
