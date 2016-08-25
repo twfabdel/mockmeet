@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { DiverService } from '../divers/diver.service';
 
 @Component({
   selector: 'home',
@@ -8,4 +11,16 @@ import { Component } from '@angular/core';
 
 export class HomeComponent { 
   title = 'Divers';
+
+  constructor(private diverService: DiverService,
+              private router: Router) { }
+
+  newMeet() {
+    if(this.diverService.getDivers().length == 0) {
+      alert("Please enter one or more divers into this meet.");
+    } else {
+      this.router.navigate(['/meet']);
+    }
+  }
+  
 }

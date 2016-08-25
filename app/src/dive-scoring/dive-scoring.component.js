@@ -9,13 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var diver_service_1 = require('../divers/diver.service');
 var toFloat_pipe_1 = require('../pipes/toFloat.pipe');
 var DiveScoringComponent = (function () {
-    function DiveScoringComponent(diverService, router) {
+    function DiveScoringComponent(diverService) {
         this.diverService = diverService;
-        this.router = router;
         this.fulls = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         this.halfs = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5];
         this.scores = [];
@@ -26,10 +24,7 @@ var DiveScoringComponent = (function () {
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
-        if (this.divers.length == 0) {
-            alert("Please enter one or more divers into this meet.");
-            this.router.navigate(['/home']);
-        }
+        this.setDiver();
     };
     DiveScoringComponent.prototype.addScore = function (score) {
         if (this.submitted) {
@@ -77,7 +72,7 @@ var DiveScoringComponent = (function () {
             styleUrls: ['./app/src/dive-scoring/dive-scoring.css'],
             pipes: [toFloat_pipe_1.ToFloatPipe]
         }), 
-        __metadata('design:paramtypes', [diver_service_1.DiverService, router_1.Router])
+        __metadata('design:paramtypes', [diver_service_1.DiverService])
     ], DiveScoringComponent);
     return DiveScoringComponent;
 }());
