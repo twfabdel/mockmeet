@@ -33,6 +33,7 @@ export class DiveScoringComponent implements OnInit {
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
+    this.setDiver();
   }
 
   private addScore(score: number) {

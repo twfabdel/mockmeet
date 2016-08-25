@@ -24,6 +24,7 @@ var DiveScoringComponent = (function () {
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
+        this.setDiver();
     };
     DiveScoringComponent.prototype.addScore = function (score) {
         if (this.submitted) {
