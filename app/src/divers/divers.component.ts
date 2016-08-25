@@ -20,16 +20,6 @@ export class DiversComponent implements OnInit {
 
   ngOnInit() {
     this.divers = this.diverService.getDivers();
-
-    this.divers.push(new Diver(
-      "Diver2", "F", [
-        new Dive('103', 'B', 1, 1),
-        new Dive('203', 'B', 1, 2),
-        new Dive('303', 'B', 1, 3),
-        new Dive('403', 'B', 1, 1.1),
-        new Dive('105', 'B', 1, 2.1)
-      ]
-    ));
   }
 
   deleteDiver(diver: Diver) {
