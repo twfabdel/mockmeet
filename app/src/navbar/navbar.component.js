@@ -9,17 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var diver_service_1 = require('../divers/diver.service');
 var NavbarComponent = (function () {
-    function NavbarComponent() {
+    function NavbarComponent(router, diverService) {
+        this.router = router;
+        this.diverService = diverService;
         this.title = 'Mock Meet';
     }
+    NavbarComponent.prototype.newMeet = function () {
+        this.diverService.restartMeet();
+        this.router.navigate(['/home']);
+    };
     NavbarComponent = __decorate([
         core_1.Component({
             selector: 'navbar',
             templateUrl: './app/src/navbar/navbar.html',
             styleUrls: ['./app/src/navbar/navbar.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router, diver_service_1.DiverService])
     ], NavbarComponent);
     return NavbarComponent;
 }());

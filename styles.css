@@ -11,6 +11,10 @@ html * {
   font-family: Arial;
 }
 
+button, a {
+  cursor:hand;
+}
+
 #appWrapper {
   margin-left:auto;
   margin-right:auto;

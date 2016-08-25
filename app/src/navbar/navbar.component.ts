@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { DiverService } from '../divers/diver.service';
 
 @Component({
   selector: 'navbar',
@@ -7,5 +10,13 @@ import { Component } from '@angular/core';
 })
 
 export class NavbarComponent { 
-  title = 'Mock Meet'
+  title = 'Mock Meet';
+
+  constructor(private router: Router,
+              private diverService: DiverService) { }
+
+  newMeet() {
+    this.diverService.restartMeet();
+    this.router.navigate(['/home']);
+  }
 }

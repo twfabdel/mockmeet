@@ -27,6 +27,17 @@ var DiverService = (function () {
         var i = this.divers.indexOf(diver);
         this.divers.splice(i, 1);
     };
+    DiverService.prototype.restartMeet = function () {
+        for (var _i = 0, _a = this.divers; _i < _a.length; _i++) {
+            var diver = _a[_i];
+            diver.total = 0;
+            for (var _b = 0, _c = diver.list; _b < _c.length; _b++) {
+                var dive = _c[_b];
+                dive.scoreList = [];
+                dive.total = '';
+            }
+        }
+    };
     DiverService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

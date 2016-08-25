@@ -15,7 +15,7 @@ export class HomeComponent {
   constructor(private diverService: DiverService,
               private router: Router) { }
 
-  newMeet() {
+  startMeet() {
     if(this.diverService.getDivers().length == 0) {
       alert("Please enter one or more divers into this meet.");
     } else {

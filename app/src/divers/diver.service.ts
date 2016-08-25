@@ -21,4 +21,14 @@ export class DiverService {
     var i = this.divers.indexOf(diver);
     this.divers.splice(i, 1);
   }
+
+  restartMeet() {
+    for(let diver of this.divers) {
+      diver.total = 0;
+      for(let dive of diver.list) {
+        dive.scoreList = [];
+        dive.total = '';
+      }
+    }
+  }
 }
