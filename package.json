@@ -10,8 +10,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "test": "grunt test",
-    "postinstall": "bower install"
+    "test": "grunt test"
   },
   "license": "ISC",
   "dependencies": {
@@ -32,7 +31,6 @@
     "zone.js": "^0.6.12",
     "angular2-in-memory-web-api": "0.0.15",
     "bootstrap": "^3.3.6",
-    "bower": "1.7.1",
     "express": "4.13.3"
   },
   "devDependencies": {
