@@ -18,6 +18,12 @@ var StandingsComponent = (function () {
     StandingsComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers().slice();
     };
+    StandingsComponent.prototype.scoreToString = function (score) {
+        if (score == 0)
+            return "0.00";
+        var str = (Math.round(score * 100)).toString();
+        return str.slice(0, str.length - 2) + "." + str.slice(-2);
+    };
     StandingsComponent = __decorate([
         core_1.Component({
             selector: 'standings',

@@ -11,8 +11,10 @@ export class DiverService {
     return this.divers;
   }
 
-  addDiver(diver: Diver) {    
-    this.divers.unshift(diver);
+  addDiver(diver: Diver) {
+    if(diver.sex == 'M') {   
+      this.divers.unshift(diver);
+    } else this.divers.push(diver);
   }
 
   deleteDiver(diver: Diver) {

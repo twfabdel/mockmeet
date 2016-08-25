@@ -24,6 +24,7 @@ var DiveScoringComponent = (function () {
         this.round = 0;
         this.diverIndex = 0;
         this.submitted = false;
+        this.running = true;
     }
     DiveScoringComponent.prototype.ngOnInit = function () {
         this.divers = this.diverService.getDivers();
@@ -82,7 +83,12 @@ var DiveScoringComponent = (function () {
     };
     DiveScoringComponent.prototype.setDiver = function () {
         this.diverUp = this.divers[this.diverIndex];
-        this.dive = this.diverUp.list[this.round];
+        var temp = this.diverUp.list[this.round];
+        if (!temp) {
+            this.running = false;
+            return;
+        }
+        this.dive = temp;
     };
     DiveScoringComponent = __decorate([
         core_1.Component({

@@ -3,6 +3,8 @@ table {
   width:400px;
 
   counter-reset: rowNumber;
+
+  margin:auto;
 }
 
 tr:nth-child(even) {
@@ -21,4 +23,13 @@ table tr td:first-child::before {
     content: counter(rowNumber);
     min-width: 1em;
     margin-right: 0.5em;
+}
+
+#total, #totalHeader {
+  width:60px;
+  text-align:right;
+}
+
+#nameHeader {
+  text-align:left;
 }
