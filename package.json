@@ -10,9 +10,6 @@
     "typings": "typings"
   },
   "license": "ISC",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
