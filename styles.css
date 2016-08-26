@@ -31,7 +31,7 @@ button, a {
   border-radius:5px;
 
   background-color:#00b33c;
-  box-shadow:3px 3px 10px #003311;
+  box-shadow:1px 1px 3px #003311;
   border:none;
   outline:none;
 }
@@ -41,9 +41,9 @@ button, a {
 }
 
 .pushBtn:active {
-  -ms-transform: translate(5px, 5px); /* IE 9 */
-  -webkit-transform: translate(3px,3px); /* Chrome, Safari, Opera */
-  transform:translate(5px,5px);
+  -ms-transform: translate(1px, 1px); /* IE 9 */
+  -webkit-transform: translate(1px,1px); /* Chrome, Safari, Opera */
+  transform:translate(1px,1px);
   box-shadow:none;
 }
 
