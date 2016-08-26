@@ -16,4 +16,5 @@ export class DdService {
     if(dive === undefined) {
       return '';
     } else return dive[level + pos];
+  }
 }
