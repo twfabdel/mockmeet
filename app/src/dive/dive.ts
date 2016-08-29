@@ -1,12 +1,13 @@
 export class Dive {
   public scoreList: number[];
+  public countedScores: number[];
   public total: number;
 
   constructor(public num: number,
               public pos: string,
               public level: number,
               public dd: number) { 
-    this.scoreList = ['-','-','-'];
+    this.countedScores = ['-','-','-'];
   }
 
   giveScore(scoreList: number[]) {
@@ -22,6 +23,8 @@ export class Dive {
       scores.pop();
       scores.shift();
     }
+
+    this.countedScores = scores;
 
     var total = 0;
     for(var i = 0; i < scores.length; i++) {

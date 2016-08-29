@@ -13,6 +13,7 @@ export class DiverService {
     
   }
 
+  //For testing styles
   mockDivers() {
     this.divers = [new Diver(
       "Tarek",
@@ -54,7 +55,8 @@ export class DiverService {
     for(let diver of this.divers) {
       diver.total = 0;
       for(let dive of diver.list) {
-        dive.scoreList = ['-','-','-'];
+        dive.scoreList = [];
+        dive.countedScores = ['-','-','-'];
         dive.total = '';
       }
     }

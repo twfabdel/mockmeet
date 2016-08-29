@@ -5,7 +5,7 @@ var Dive = (function () {
         this.pos = pos;
         this.level = level;
         this.dd = dd;
-        this.scoreList = ['-', '-', '-'];
+        this.countedScores = ['-', '-', '-'];
     }
     Dive.prototype.giveScore = function (scoreList) {
         this.scoreList = scoreList;
@@ -18,6 +18,7 @@ var Dive = (function () {
             scores.pop();
             scores.shift();
         }
+        this.countedScores = scores;
         var total = 0;
         for (var i = 0; i < scores.length; i++) {
             total += scores[i];

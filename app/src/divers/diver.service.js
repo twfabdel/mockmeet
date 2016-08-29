@@ -19,6 +19,7 @@ var DiverService = (function () {
         //this.mockDivers();
         return this.divers;
     };
+    //For testing styles
     DiverService.prototype.mockDivers = function () {
         this.divers = [new diver_1.Diver("Tarek", "M", [new dive_1.Dive(101, "B", 1, 1.0),
                 new dive_1.Dive(101, "B", 1, 1.0),
@@ -53,7 +54,8 @@ var DiverService = (function () {
             diver.total = 0;
             for (var _b = 0, _c = diver.list; _b < _c.length; _b++) {
                 var dive = _c[_b];
-                dive.scoreList = ['-', '-', '-'];
+                dive.scoreList = [];
+                dive.countedScores = ['-', '-', '-'];
                 dive.total = '';
             }
         }

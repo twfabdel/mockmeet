@@ -21,7 +21,7 @@
 
       <tr *ngFor="let dive of diver.list" class="dropdown {{'scores' + divers.indexOf(diver) }}">
         <td width="80px">{{dive.num}}{{dive.pos}} {{dive.level}}m</td>
-        <td *ngFor="let score of dive.scoreList" align="center">{{ score | toFloat }}</td>
+        <td *ngFor="let score of dive.countedScores" align="center">{{ score | toFloat }}</td>
         <td align="center">{{ scoreToString(dive.total) }}</td>
       </tr>
     </table>
