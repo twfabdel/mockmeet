@@ -8,7 +8,7 @@ export class DiverService {
   private divers = [];
 
   getDivers() {
-    this.mockDivers();
+    //this.mockDivers();
     return this.divers;
     
   }
@@ -54,7 +54,7 @@ export class DiverService {
     for(let diver of this.divers) {
       diver.total = 0;
       for(let dive of diver.list) {
-        dive.scoreList = [];
+        dive.scoreList = ['-','-','-'];
         dive.total = '';
       }
     }

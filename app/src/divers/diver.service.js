@@ -16,7 +16,7 @@ var DiverService = (function () {
         this.divers = [];
     }
     DiverService.prototype.getDivers = function () {
-        this.mockDivers();
+        //this.mockDivers();
         return this.divers;
     };
     DiverService.prototype.mockDivers = function () {
@@ -53,7 +53,7 @@ var DiverService = (function () {
             diver.total = 0;
             for (var _b = 0, _c = diver.list; _b < _c.length; _b++) {
                 var dive = _c[_b];
-                dive.scoreList = [];
+                dive.scoreList = ['-', '-', '-'];
                 dive.total = '';
             }
         }

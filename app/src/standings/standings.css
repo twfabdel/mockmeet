@@ -3,15 +3,21 @@ table {
   width:400px;
 
   counter-reset: rowNumber;
+  border-collapse: collapse;
 
   margin:auto;
 }
 
-ul {
-  counter-reset: rowNumber;
+td {
+  padding:5px;
 }
 
-li:nth-child(odd) {
+ul {
+  counter-reset: rowNumber;
+  padding-left:0;
+}
+
+li:nth-child(odd) th{
   background: lightgray;
 }
 
@@ -19,12 +25,13 @@ ul li{
   list-style:none;
 }
 
-tr:nth-child(even) {
+.table tr:nth-child(even) {
   background: lightgray;
 }
 
 .headers th {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid black;
+  font-size:25px;
 }
 
 .table tr:not(:first-child) {
@@ -37,11 +44,6 @@ tr:nth-child(even) {
     margin-right: 0.5em;
 }
 
-table, tr, td {
-  border:1px solid black;
-  padding:0;
-}
-
 .scoreList .diveTotal {
   text-align:right;
 }
@@ -49,26 +51,29 @@ table, tr, td {
 .dropdown{
   display:none;
   width:100%;
+  padding:5px;
+
+  font-size:15px;
 }
 
-.dropdown tr td{
-  width:100%;
+.diverInfo {
+  counter-reset: rowNumber;
 }
 
-.dropdownTbl{
-  counter-reset:rowNumber;
-  background:#00b8e6;
-  margin:0;
-  padding:0;
-  z-index:1;
+.diverInfo th {
+  padding-left:5px;
 }
 
-.dropdownTbl{
-  width:300px;
+.diverInfo tr:nth-child(2) {
+  border-top: 1px solid gray;
 }
 
-.dropdownTbl tr:nth-child(even) {
-  background: green;
+.diverInfo tr:nth-child(even) {
+  background: #99ddff;
+}
+
+.diverInfo tr:nth-child(2n+3) {
+  background: #00b8e6;
 }
 
 .rotate {
@@ -77,24 +82,16 @@ table, tr, td {
   transform: rotate(45deg);
 
   font-weight:bold;
+  color:#CA342D;
 }
 
 .dropbtn {
   font-size: 25px;
   padding-left:10px;
+  color:green;
   border:none;
   background:none;
   outline:none;
-}
-
-.dropbtn:hover ~.dropdown {
-  display:table-row;
-  color:red;
-  position:absolute;
-}
-
-.dropbtn:hover +td{
-  background-color:red;
 }
 
 .total, #totalHeader {

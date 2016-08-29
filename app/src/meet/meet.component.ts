@@ -11,6 +11,9 @@ import { Component } from '@angular/core';
     table {
       width:100%;
     }
+    td {
+      padding-right:10px;
+    }
   `]
 })
 
