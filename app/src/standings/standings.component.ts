@@ -6,11 +6,13 @@ import { Dive } from '../dive/dive';
 import { DiverService } from '../divers/diver.service';
 import { DiverSortPipe } from '../pipes/sort.pipe';
 
+import { ToFloatPipe } from '../pipes/toFloat.pipe';
+
 @Component({
   selector: 'standings',
   templateUrl: './app/src/standings/standings.html',
   styleUrls: ['./app/src/standings/standings.css'],
-  pipes: [ DiverSortPipe ]
+  pipes: [ DiverSortPipe, ToFloatPipe ]
 })
 
 export class StandingsComponent implements OnInit{ 
@@ -23,7 +25,7 @@ export class StandingsComponent implements OnInit{
   }
 
   private scoreToString(score: number) : string {
-    if(score == 0) return "0.00";
+    if(score == 0 || !score) return "0.00";
     var str = (Math.round(score * 100)).toString();
     return str.slice(0, str.length-2) + "." + str.slice(-2);
   } 
@@ -33,17 +35,13 @@ export class StandingsComponent implements OnInit{
     let scoreElem = document.getElementById("scores" + index).style;
     let buttonElem = document.getElementById("btn" + index);
 
-    
-
-    if(scoreElem.display != "table-row") {
-      scoreElem.display = "table-row";
+    if(scoreElem.display != "inline") {
+      scoreElem.display = "inline";
       buttonElem.setAttribute("class", "rotate");
     } else {
       scoreElem.display = "none";
       buttonElem.setAttribute("class", "");
     }
-
-
   }
 
 }

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var diver_service_1 = require('../divers/diver.service');
 var sort_pipe_1 = require('../pipes/sort.pipe');
+var toFloat_pipe_1 = require('../pipes/toFloat.pipe');
 var StandingsComponent = (function () {
     function StandingsComponent(diverService) {
         this.diverService = diverService;
@@ -19,7 +20,7 @@ var StandingsComponent = (function () {
         this.divers = this.diverService.getDivers().slice();
     };
     StandingsComponent.prototype.scoreToString = function (score) {
-        if (score == 0)
+        if (score == 0 || !score)
             return "0.00";
         var str = (Math.round(score * 100)).toString();
         return str.slice(0, str.length - 2) + "." + str.slice(-2);
@@ -28,8 +29,8 @@ var StandingsComponent = (function () {
         var index = this.divers.indexOf(diver);
         var scoreElem = document.getElementById("scores" + index).style;
         var buttonElem = document.getElementById("btn" + index);
-        if (scoreElem.display != "table-row") {
-            scoreElem.display = "table-row";
+        if (scoreElem.display != "inline") {
+            scoreElem.display = "inline";
             buttonElem.setAttribute("class", "rotate");
         }
         else {
@@ -42,7 +43,7 @@ var StandingsComponent = (function () {
             selector: 'standings',
             templateUrl: './app/src/standings/standings.html',
             styleUrls: ['./app/src/standings/standings.css'],
-            pipes: [sort_pipe_1.DiverSortPipe]
+            pipes: [sort_pipe_1.DiverSortPipe, toFloat_pipe_1.ToFloatPipe]
         }), 
         __metadata('design:paramtypes', [diver_service_1.DiverService])
     ], StandingsComponent);
