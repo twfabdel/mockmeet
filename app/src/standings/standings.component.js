@@ -24,6 +24,19 @@ var StandingsComponent = (function () {
         var str = (Math.round(score * 100)).toString();
         return str.slice(0, str.length - 2) + "." + str.slice(-2);
     };
+    StandingsComponent.prototype.showScores = function (diver) {
+        var index = this.divers.indexOf(diver);
+        var scoreElem = document.getElementById("scores" + index).style;
+        var buttonElem = document.getElementById("btn" + index);
+        if (scoreElem.display != "table-row") {
+            scoreElem.display = "table-row";
+            buttonElem.setAttribute("class", "rotate");
+        }
+        else {
+            scoreElem.display = "none";
+            buttonElem.setAttribute("class", "");
+        }
+    };
     StandingsComponent = __decorate([
         core_1.Component({
             selector: 'standings',

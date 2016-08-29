@@ -15,21 +15,55 @@ th {
   border-bottom: 1px solid black;
 }
 
-table tr:not(:first-child) {
+.table tr:not(:first-child) {
     counter-increment: rowNumber;
 }
 
-table tr td:first-child::before {
+.table tr td:first-child::before {
     content: counter(rowNumber);
     min-width: 1em;
     margin-right: 0.5em;
 }
 
-#total, #totalHeader {
+table, tr, td {
+  border: 1px solid black;
+  padding:0;
+
+}
+
+ul li{
+  list-style:none;
+}
+
+.dropdown {
+  display:none;
+}
+
+.rotate {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+  font-weight:bold;
+}
+
+.dropbtn {
+  font-size: 20px;
+  padding-left:10px;
+}
+
+.dropbtn:focus ~.dropdown {
+  display:table-row;
+  color:red;
+  position:absolute;
+}
+
+.total, #totalHeader {
   width:60px;
   text-align:right;
 }
 
-#nameHeader {
+.name, #nameHeader {
   text-align:left;
+  width:340px;
 }

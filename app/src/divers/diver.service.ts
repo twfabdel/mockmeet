@@ -8,7 +8,32 @@ export class DiverService {
   private divers = [];
 
   getDivers() {
+    this.divers = [new Diver(
+      "Tarek",
+      "M",
+      [new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0)
+      ]
+    ),
+    new Diver(
+      "Ziyad",
+      "M",
+      [new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0),
+      new Dive(101, "B", 1, 1.0)
+      ]
+    ),
+    ];
+
     return this.divers;
+    
   }
 
   addDiver(diver: Diver) {

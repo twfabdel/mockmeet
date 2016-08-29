@@ -28,4 +28,22 @@ export class StandingsComponent implements OnInit{
     return str.slice(0, str.length-2) + "." + str.slice(-2);
   } 
 
+  private showScores(diver: Diver) {
+    var index = this.divers.indexOf(diver);
+    let scoreElem = document.getElementById("scores" + index).style;
+    let buttonElem = document.getElementById("btn" + index);
+
+    
+
+    if(scoreElem.display != "table-row") {
+      scoreElem.display = "table-row";
+      buttonElem.setAttribute("class", "rotate");
+    } else {
+      scoreElem.display = "none";
+      buttonElem.setAttribute("class", "");
+    }
+
+
+  }
+
 }

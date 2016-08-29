@@ -2,9 +2,31 @@
   <tr>
     <th id="nameHeader">Diver</th>
     <th id="totalHeader">Total</th>
-  </tr>
-  <tr *ngFor="let diver of divers | sort">
-    <td id="name">{{ diver.name }}</td>
-    <td id="total">{{ scoreToString(diver.total) }}</td>
+    <th></th>
   </tr>
 </table>
+
+<ul>  
+  <li *ngFor="let diver of divers | sort">
+    <table>
+      <tr>
+        <td class="name">{{ diver.name }}</td>
+        <td class="total">{{ scoreToString(diver.total) }}</td>
+        <td><button class="dropbtn" 
+            (click)=showScores(diver)>
+              <div id = "{{ 'btn' + divers.indexOf(diver) }}" >+
+              </div>
+            </button>
+        </td>
+      </tr>
+      <tr class="dropdown" id="{{ 'scores' + divers.indexOf(diver) }}">
+        <table>
+          <tr *ngFor="let dive of diver.list">
+            <td>{{dive.num}}</td>
+          </tr>
+        </table>
+      </tr>
+    </table>
+  </li> 
+</ul>
+
