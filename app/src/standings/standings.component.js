@@ -27,16 +27,24 @@ var StandingsComponent = (function () {
     };
     StandingsComponent.prototype.showScores = function (diver) {
         var index = this.divers.indexOf(diver);
-        var scoreElem = document.getElementById("scores" + index).style;
+        var scoreElems = document.getElementsByClassName("scores" + index);
         var buttonElem = document.getElementById("btn" + index);
-        if (scoreElem.display != "inline") {
-            scoreElem.display = "inline";
+        var flip = false;
+        for (var _i = 0, scoreElems_1 = scoreElems; _i < scoreElems_1.length; _i++) {
+            var elem = scoreElems_1[_i];
+            if (elem.style.display != "table-row") {
+                elem.style.display = "table-row";
+                flip = true;
+            }
+            else {
+                elem.style.display = "none";
+            }
+        }
+        if (flip) {
             buttonElem.setAttribute("class", "rotate");
         }
-        else {
-            scoreElem.display = "none";
+        else
             buttonElem.setAttribute("class", "");
-        }
     };
     StandingsComponent = __decorate([
         core_1.Component({

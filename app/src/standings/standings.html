@@ -1,4 +1,4 @@
-<table>
+<table class="headers">
   <tr>
     <th id="nameHeader">Diver</th>
     <th id="totalHeader">Total</th>
@@ -9,16 +9,26 @@
   <li *ngFor="let diver of divers | sort">
     <table>
       <tr>
-        <td class="name">{{ diver.name }}</td>
-        <td class="total">{{ scoreToString(diver.total) }}
+        <th class="name" colspan="4">{{ diver.name }}</th>
+        <th class="total">{{ scoreToString(diver.total) }}
           <button class="dropbtn" (click)=showScores(diver)>
             <div id = "{{ 'btn' + divers.indexOf(diver) }}">
               +
             </div>
           </button>
-        </td>
+        </th>
       </tr>
-      <tr class="dropdown" id="{{ 'scores' + divers.indexOf(diver) }}">
+    <!-- <div class="dropdown" id="{{ 'scores' + divers.indexOf(diver) }}"> -->
+      <tr *ngFor="let dive of diver.list" class="dropdown {{'scores' + divers.indexOf(diver) }}">
+        <td>{{dive.num}}</td>
+        <td *ngFor="let score of dive.scoreList" align="center">{{ score | toFloat }}</td>
+        <td align="center">{{ scoreToString(dive.total) }}</td>
+      </tr>
+    <!-- </div> -->
+      
+
+
+<!--       <tr class="dropdown" id="{{ 'scores' + divers.indexOf(diver) }}">
         <table colspan="3" class="dropdownTbl">
           <tr *ngFor="let dive of diver.list">
             <td>{{dive.num}}</td>
@@ -26,7 +36,10 @@
             <td>{{ scoreToString(dive.total) }}</td>
           </tr>
         </table>
-      </tr>
+      </tr> -->
+
+
+
     </table>
   </li> 
 </ul>

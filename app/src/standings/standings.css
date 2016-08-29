@@ -23,7 +23,7 @@ tr:nth-child(even) {
   background: lightgray;
 }
 
-th {
+.headers th {
   border-bottom: 1px solid black;
 }
 
@@ -38,11 +38,21 @@ th {
 }
 
 table, tr, td {
+  border:1px solid black;
   padding:0;
 }
 
-.dropdown {
+.scoreList .diveTotal {
+  text-align:right;
+}
+
+.dropdown{
   display:none;
+  width:100%;
+}
+
+.dropdown tr td{
+  width:100%;
 }
 
 .dropdownTbl{
@@ -70,14 +80,21 @@ table, tr, td {
 }
 
 .dropbtn {
-  font-size: 20px;
+  font-size: 25px;
   padding-left:10px;
+  border:none;
+  background:none;
+  outline:none;
 }
 
-.dropbtn:focus ~.dropdown {
+.dropbtn:hover ~.dropdown {
   display:table-row;
   color:red;
   position:absolute;
+}
+
+.dropbtn:hover +td{
+  background-color:red;
 }
 
 .total, #totalHeader {

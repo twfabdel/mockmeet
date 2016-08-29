@@ -32,16 +32,22 @@ export class StandingsComponent implements OnInit{
 
   private showScores(diver: Diver) {
     var index = this.divers.indexOf(diver);
-    let scoreElem = document.getElementById("scores" + index).style;
+    let scoreElems = document.getElementsByClassName("scores" + index);
     let buttonElem = document.getElementById("btn" + index);
 
-    if(scoreElem.display != "inline") {
-      scoreElem.display = "inline";
-      buttonElem.setAttribute("class", "rotate");
-    } else {
-      scoreElem.display = "none";
-      buttonElem.setAttribute("class", "");
+    var flip = false;
+    for(var elem of scoreElems) {
+      if(elem.style.display != "table-row") {
+        elem.style.display = "table-row";
+        flip = true;
+      } else {
+        elem.style.display = "none";
+      }
     }
+
+    if(flip) {
+      buttonElem.setAttribute("class", "rotate");
+    } else buttonElem.setAttribute("class", "");
   }
 
 }
