@@ -9,12 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var diver_1 = require('../diver/diver');
+var dive_1 = require('../dive/dive');
 var DiverService = (function () {
     function DiverService() {
         this.divers = [];
     }
     DiverService.prototype.getDivers = function () {
+        //this.mockDivers();
         return this.divers;
+    };
+    //For testing styles
+    DiverService.prototype.mockDivers = function () {
+        this.divers = [new diver_1.Diver("Tarek", "M", [new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0)
+            ]),
+            new diver_1.Diver("Ziyad", "M", [new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0),
+                new dive_1.Dive(101, "B", 1, 1.0)
+            ]),
+        ];
     };
     DiverService.prototype.addDiver = function (diver) {
         if (diver.sex == 'M') {
@@ -34,6 +55,7 @@ var DiverService = (function () {
             for (var _b = 0, _c = diver.list; _b < _c.length; _b++) {
                 var dive = _c[_b];
                 dive.scoreList = [];
+                dive.countedScores = ['-', '-', '-'];
                 dive.total = '';
             }
         }

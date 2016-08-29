@@ -1,10 +1,30 @@
-<table>
+<table class="headers">
   <tr>
     <th id="nameHeader">Diver</th>
     <th id="totalHeader">Total</th>
   </tr>
-  <tr *ngFor="let diver of divers | sort">
-    <td id="name">{{ diver.name }}</td>
-    <td id="total">{{ scoreToString(diver.total) }}</td>
-  </tr>
 </table>
+
+<ul>  
+  <li *ngFor="let diver of divers | sort">
+    <table class="diverInfo">
+      <tr>
+        <th class="name" colspan="4">{{ diver.name }}</th>
+        <th class="total">{{ scoreToString(diver.total) }}
+          <button class="dropbtn" (click)=showScores(diver)>
+            <div id = "{{ 'btn' + divers.indexOf(diver) }}">
+              +
+            </div>
+          </button>
+        </th>
+      </tr>
+
+      <tr *ngFor="let dive of diver.list" class="dropdown {{'scores' + divers.indexOf(diver) }}">
+        <td width="80px">{{dive.num}}{{dive.pos}} {{dive.level}}m</td>
+        <td *ngFor="let score of dive.countedScores" align="center">{{ score | toFloat }}</td>
+        <td align="center">{{ scoreToString(dive.total) }}</td>
+      </tr>
+    </table>
+  </li> 
+</ul>
+
