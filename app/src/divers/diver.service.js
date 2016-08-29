@@ -16,6 +16,10 @@ var DiverService = (function () {
         this.divers = [];
     }
     DiverService.prototype.getDivers = function () {
+        this.mockDivers();
+        return this.divers;
+    };
+    DiverService.prototype.mockDivers = function () {
         this.divers = [new diver_1.Diver("Tarek", "M", [new dive_1.Dive(101, "B", 1, 1.0),
                 new dive_1.Dive(101, "B", 1, 1.0),
                 new dive_1.Dive(101, "B", 1, 1.0),
@@ -31,7 +35,6 @@ var DiverService = (function () {
                 new dive_1.Dive(101, "B", 1, 1.0)
             ]),
         ];
-        return this.divers;
     };
     DiverService.prototype.addDiver = function (diver) {
         if (diver.sex == 'M') {

@@ -8,6 +8,12 @@ export class DiverService {
   private divers = [];
 
   getDivers() {
+    this.mockDivers();
+    return this.divers;
+    
+  }
+
+  mockDivers() {
     this.divers = [new Diver(
       "Tarek",
       "M",
@@ -31,9 +37,6 @@ export class DiverService {
       ]
     ),
     ];
-
-    return this.divers;
-    
   }
 
   addDiver(diver: Diver) {
