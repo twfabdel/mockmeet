@@ -5,6 +5,7 @@ var Dive = (function () {
         this.pos = pos;
         this.level = level;
         this.dd = dd;
+        this.scoreList = ['-', '-', '-'];
     }
     Dive.prototype.giveScore = function (scoreList) {
         this.scoreList = scoreList;

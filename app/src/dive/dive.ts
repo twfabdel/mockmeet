@@ -5,7 +5,9 @@ export class Dive {
   constructor(public num: number,
               public pos: string,
               public level: number,
-              public dd: number) { }
+              public dd: number) { 
+    this.scoreList = ['-','-','-'];
+  }
 
   giveScore(scoreList: number[]) {
     this.scoreList = scoreList;

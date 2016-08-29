@@ -2,7 +2,6 @@
   <tr>
     <th id="nameHeader">Diver</th>
     <th id="totalHeader">Total</th>
-    <th></th>
   </tr>
 </table>
 
@@ -11,24 +10,19 @@
     <table>
       <tr>
         <td class="name">{{ diver.name }}</td>
-        <td class="total">{{ scoreToString(diver.total) }}</td>
-        <td><button class="dropbtn" 
-            (click)=showScores(diver)>
-              <div id = "{{ 'btn' + divers.indexOf(diver) }}" >+
-              </div>
-            </button>
+        <td class="total">{{ scoreToString(diver.total) }}
+          <button class="dropbtn" (click)=showScores(diver)>
+            <div id = "{{ 'btn' + divers.indexOf(diver) }}">
+              +
+            </div>
+          </button>
         </td>
       </tr>
       <tr class="dropdown" id="{{ 'scores' + divers.indexOf(diver) }}">
-        <table colspan="3">
+        <table colspan="3" class="dropdownTbl">
           <tr *ngFor="let dive of diver.list">
             <td>{{dive.num}}</td>
-            <div *ngIf="!dive.scoreList">
-              <td *ngFor="let score of ['-','-','-']">{{score}}</td>
-            </div>
-            <div *ngIf="dive.scoreList">
-              <td *ngFor="let score of dive.scoreList">{{ score | toFloat }}</td>
-            </div>
+            <td *ngFor="let score of dive.scoreList">{{ score | toFloat }}</td>
             <td>{{ scoreToString(dive.total) }}</td>
           </tr>
         </table>

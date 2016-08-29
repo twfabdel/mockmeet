@@ -38,13 +38,27 @@ th {
 }
 
 table, tr, td {
-  border: 1px solid black;
   padding:0;
-
 }
 
 .dropdown {
   display:none;
+}
+
+.dropdownTbl{
+  counter-reset:rowNumber;
+  background:#00b8e6;
+  margin:0;
+  padding:0;
+  z-index:1;
+}
+
+.dropdownTbl{
+  width:300px;
+}
+
+.dropdownTbl tr:nth-child(even) {
+  background: green;
 }
 
 .rotate {
@@ -67,11 +81,11 @@ table, tr, td {
 }
 
 .total, #totalHeader {
-  width:60px;
-  text-align:middle;
+  width:100px;
+  text-align:right;
 }
 
 .name, #nameHeader {
   text-align:left;
-  width:340px;
+  width:300px;
 }
