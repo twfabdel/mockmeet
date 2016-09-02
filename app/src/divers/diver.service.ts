@@ -8,36 +8,36 @@ export class DiverService {
   private divers = [];
 
   getDivers() {
-    //this.mockDivers();
-    return this.divers;
-    
+    if(this.divers.length == 0) {
+      this.mockDivers();
+    }
+    return this.divers;  
   }
 
   //For testing styles
   mockDivers() {
-    this.divers = [new Diver(
-      "Tarek",
+    this.divers.push(new Diver(
+      "Diver1",
       "M",
-      [new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0)
+      [new Dive(101, "B", 1, 1),
+      new Dive(101, "B", 1, 2),
+      new Dive(101, "B", 1, 3),
+      new Dive(101, "B", 1, 1.1),
+      new Dive(101, "B", 1, 1.2),
+      new Dive(101, "B", 1, 1.3)
       ]
-    ),
-    new Diver(
-      "Ziyad",
+    ));
+    this.divers.push(new Diver(
+      "Diver2",
       "M",
-      [new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0),
-      new Dive(101, "B", 1, 1.0)
+      [new Dive(101, "B", 1, 1.1),
+      new Dive(101, "B", 1, 1),
+      new Dive(101, "B", 1, 2),
+      new Dive(101, "B", 1, 1.6),
+      new Dive(101, "B", 1, 2.1),
+      new Dive(101, "B", 1, 3.1)
       ]
-    ),
-    ];
+    ));
   }
 
   addDiver(diver: Diver) {

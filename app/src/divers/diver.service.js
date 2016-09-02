@@ -16,26 +16,27 @@ var DiverService = (function () {
         this.divers = [];
     }
     DiverService.prototype.getDivers = function () {
-        //this.mockDivers();
+        if (this.divers.length == 0) {
+            this.mockDivers();
+        }
         return this.divers;
     };
     //For testing styles
     DiverService.prototype.mockDivers = function () {
-        this.divers = [new diver_1.Diver("Tarek", "M", [new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0)
-            ]),
-            new diver_1.Diver("Ziyad", "M", [new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0),
-                new dive_1.Dive(101, "B", 1, 1.0)
-            ]),
-        ];
+        this.divers.push(new diver_1.Diver("Diver1", "M", [new dive_1.Dive(101, "B", 1, 1),
+            new dive_1.Dive(101, "B", 1, 2),
+            new dive_1.Dive(101, "B", 1, 3),
+            new dive_1.Dive(101, "B", 1, 1.1),
+            new dive_1.Dive(101, "B", 1, 1.2),
+            new dive_1.Dive(101, "B", 1, 1.3)
+        ]));
+        this.divers.push(new diver_1.Diver("Diver2", "M", [new dive_1.Dive(101, "B", 1, 1.1),
+            new dive_1.Dive(101, "B", 1, 1),
+            new dive_1.Dive(101, "B", 1, 2),
+            new dive_1.Dive(101, "B", 1, 1.6),
+            new dive_1.Dive(101, "B", 1, 2.1),
+            new dive_1.Dive(101, "B", 1, 3.1)
+        ]));
     };
     DiverService.prototype.addDiver = function (diver) {
         if (diver.sex == 'M') {
