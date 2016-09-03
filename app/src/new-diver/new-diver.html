@@ -2,7 +2,7 @@
     <form (ngSubmit)="newDiver()" #diverForm="ngForm">
       <div class="headerInfo">
         <label for="name">Name: </label>
-        <input type="text" [(ngModel)]="diverName" ngControl="name" name="name" required>
+        <input class="form-control" type="text" [(ngModel)]="diverName" ngControl="name" name="name" required>
         
         <select [(ngModel)]="sex" ngControl="sex" name="sex" required>
           <option selected>M</option>
