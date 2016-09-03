@@ -12,18 +12,60 @@ td {
   padding:5px;
 }
 
-ul {
-  counter-reset: rowNumber;
-  padding-left:0;
+#standingsList {
+  counter-reset: li;
+  padding-left:40px;
 }
 
 li:nth-child(odd) th{
   background: lightgray;
 }
 
-ul li{
+#standingsList li{
   list-style:none;
+
+  position:relative;
 }
+
+#standingsList li:before {
+  content:counter(li)"."; /* Use the counter as content */
+  counter-increment:li; /* Increment the counter by 1 */
+  position:absolute;
+
+  left:-20px;
+  font-size:18px;
+  top:6px;
+}
+
+#standingsList li:nth-child(-n+3):before {
+  content:counter(li);
+
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+
+  border-radius:25px;
+  height:20px;
+  width:25px;
+
+  text-align:center;
+  left:-28px;
+
+  color:white;
+}
+
+#standingsList li:nth-child(1):before {
+  background-color:#DAA520;
+}
+
+#standingsList li:nth-child(2):before {
+  background-color:#C0C0C0;
+}
+
+#standingsList li:nth-child(3):before {
+  background-color:#CD7F32;
+}
+
 
 .table tr:nth-child(even) {
   background: lightgray;

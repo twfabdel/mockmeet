@@ -30,13 +30,6 @@ var DiverService = (function () {
             new dive_1.Dive(101, "B", 1, 1.2),
             new dive_1.Dive(101, "B", 1, 1.3)
         ]));
-        this.divers.push(new diver_1.Diver("Diver2", "M", [new dive_1.Dive(101, "B", 1, 1.1),
-            new dive_1.Dive(101, "B", 1, 1),
-            new dive_1.Dive(101, "B", 1, 2),
-            new dive_1.Dive(101, "B", 1, 1.6),
-            new dive_1.Dive(101, "B", 1, 2.1),
-            new dive_1.Dive(101, "B", 1, 3.1)
-        ]));
     };
     DiverService.prototype.addDiver = function (diver) {
         if (diver.sex == 'M') {

@@ -27,17 +27,7 @@ export class DiverService {
       new Dive(101, "B", 1, 1.3)
       ]
     ));
-    this.divers.push(new Diver(
-      "Diver2",
-      "M",
-      [new Dive(101, "B", 1, 1.1),
-      new Dive(101, "B", 1, 1),
-      new Dive(101, "B", 1, 2),
-      new Dive(101, "B", 1, 1.6),
-      new Dive(101, "B", 1, 2.1),
-      new Dive(101, "B", 1, 3.1)
-      ]
-    ));
+
   }
 
   addDiver(diver: Diver) {
