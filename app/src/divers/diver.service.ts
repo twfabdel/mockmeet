@@ -8,9 +8,6 @@ export class DiverService {
   private divers = [];
 
   getDivers() {
-    if(this.divers.length == 0) {
-      this.mockDivers();
-    }
     return this.divers;  
   }
 

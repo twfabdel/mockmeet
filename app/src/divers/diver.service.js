@@ -16,9 +16,6 @@ var DiverService = (function () {
         this.divers = [];
     }
     DiverService.prototype.getDivers = function () {
-        if (this.divers.length == 0) {
-            this.mockDivers();
-        }
         return this.divers;
     };
     //For testing styles
