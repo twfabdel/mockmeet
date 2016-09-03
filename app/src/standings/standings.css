@@ -7,7 +7,6 @@ table {
 
   margin:auto;
 }
-
 td {
   padding:5px;
 }
@@ -69,6 +68,10 @@ li:nth-child(odd) th{
 
 .table tr:nth-child(even) {
   background: lightgray;
+}
+
+.headers {
+  width:95%;
 }
 
 .headers th {

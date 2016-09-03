@@ -47,7 +47,13 @@ export class DiveScoringComponent implements OnInit {
   private submit() {
     this.submitted = true;
 
-    if(this.scores.length % 2 == 0) {
+    if(this.scores.length == 1) {
+      this.scores.push(this.scores[0]);
+      this.scores.push(this.scores[0]);
+    } else if(this.scores.length == 2) {
+      var mid = 0.5 * (this.scores[0] + this.scores[1]);
+      this.scores.push(mid);
+    } else if(this.scores.length % 2 == 0) {
       alert("Please enter an odd number of scores.");
       return;
     }
