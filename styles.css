@@ -12,7 +12,12 @@ html * {
 }
 
 button, a {
-  cursor:hand;
+  cursor:pointer;
+}
+
+input {
+  box-shadow:none;
+  outline:none;
 }
 
 #appWrapper {
