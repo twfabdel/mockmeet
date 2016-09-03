@@ -19,6 +19,58 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  padding-right:20px;
+}
+
+.select select {
+  display: inline-block;
+  width: 50px;
+  height:20px;
+  padding-left:10px;
+  cursor: pointer;
+  color: white;
+  border: 0;
+  border-radius: 7px;
+  outline: 0;
+  background: #00b8e6;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+.select__arrow {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  left:35px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-width: 4px 4px 0 4px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow{
+  border-top-color: #000;
+}
+
+.selectSex select, .selectPos select{
+  width:40px;
+}
+
+.selectSex .select__arrow, .selectPos .select__arrow {
+  left:25px;
+}
+
 .dd {
   float:right;
   font-size:14px;
