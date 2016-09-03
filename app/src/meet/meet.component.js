@@ -16,7 +16,7 @@ var MeetComponent = (function () {
         core_1.Component({
             selector: 'meet',
             templateUrl: './app/src/meet/meet.html',
-            styles: ["\n    table {\n      width:100%;\n      padding-top:50px;\n    }\n    td {\n      padding-right:10px;\n    }\n  "]
+            styles: ["\n    table {\n      width:auto;\n      margin:auto;\n      padding-top:50px;\n    }\n    td {\n      padding-right:10px;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], MeetComponent);

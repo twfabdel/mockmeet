@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app/src/meet/meet.html',
   styles: [`
     table {
-      width:100%;
+      width:auto;
+      margin:auto;
       padding-top:50px;
     }
     td {
