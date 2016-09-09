@@ -20,7 +20,7 @@
           <td>
             <div class="select selectSex">
               <select [(ngModel)]="sex" ngControl="sex" name="sex" required>
-                <option selected>M</option>
+                <option>M</option>
                 <option>F</option>
               </select>
               <div class="select__arrow"></div>
@@ -64,16 +64,30 @@
               <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev">
+
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' ">
               <select [(ngModel)]="level0" ngControl="level0" 
                   name="dive level 0" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
               <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd0" class="dd"> 
-              {{ ddService.getDD(dive0, pos0, level0) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd0_1m">{{ ddService.getDD(dive0, pos0, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd0_3m">{{ ddService.getDD(dive0, pos0, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd0_10m">{{ ddService.getDD(dive0, pos0, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd0_other">
+                {{ ddService.getDD(dive0, pos0, level0) | toFloat }}
+              </span>
             </div>
           
           </div>
@@ -94,21 +108,29 @@
             <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev">
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' ">
               <select [(ngModel)]="level1" ngControl="level1" 
                   name="dive level 1" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
-                <option value=1>1m</option>
-                <option value=3>3m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
                 <option value=5>5m</option>
                 <option value=7>7m</option>
                 <option value=10>10m</option>
               </select>
-            <div class="select__arrow"></div>
+              <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd1" class="dd"> 
-              {{ ddService.getDD(dive1, pos1, level1) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd1_1m">{{ ddService.getDD(dive1, pos1, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd1_3m">{{ ddService.getDD(dive1, pos1, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd1_10m">{{ ddService.getDD(dive1, pos1, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd1_other">
+                {{ ddService.getDD(dive1, pos1, level1) | toFloat }}
+              </span>
             </div>
           
           </div>
@@ -129,16 +151,32 @@
               <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev"> 
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' "> 
               <select [(ngModel)]="level2" ngControl="level2" 
                   name="dive level 2" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
-            <div class="select__arrow"></div>
+              <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd2" class="dd"> 
-              {{ ddService.getDD(dive2, pos2, level2) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd2_1m">
+                {{ ddService.getDD(dive2, pos2, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd2_3m">
+                {{ ddService.getDD(dive2, pos2, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd2_10m">
+                {{ ddService.getDD(dive2, pos2, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd2_other">
+                {{ ddService.getDD(dive2, pos2, level2) | toFloat }}
+              </span>
             </div>
           
           </div>
@@ -159,16 +197,29 @@
             <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev">
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' ">
               <select [(ngModel)]="level3" ngControl="level3" 
                   name="dive level 3" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
-            <div class="select__arrow"></div>
+              <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd3" class="dd"> 
-              {{ ddService.getDD(dive3, pos3, level3) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd3_1m">{{ ddService.getDD(dive3, pos3, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd3_3m">{{ ddService.getDD(dive3, pos3, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd3_10m">{{ ddService.getDD(dive3, pos3, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd3_other">
+                {{ ddService.getDD(dive3, pos3, level3) | toFloat }}
+              </span>
             </div>
           
           </div>
@@ -189,16 +240,32 @@
             <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev">
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' ">
               <select [(ngModel)]="level4" ngControl="level4" 
                   name="dive level 4" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
-            <div class="select__arrow"></div>
+              <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd4" class="dd"> 
-              {{ ddService.getDD(dive4, pos4, level4) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd4_1m">
+                {{ ddService.getDD(dive4, pos4, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd4_3m">
+                {{ ddService.getDD(dive4, pos4, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd4_10m">
+                {{ ddService.getDD(dive4, pos4, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd4_other">
+                {{ ddService.getDD(dive4, pos4, level4) | toFloat }}
+              </span>
             </div>
           
           </div>
@@ -219,16 +286,32 @@
             <div class="select__arrow"></div>
             </div>
             
-            <div class="select selectLev">
+            <div class="select selectLev" *ngIf="event == 'Custom' || event == 'Platform' ">
               <select [(ngModel)]="level5" ngControl="level5" 
                   name="dive level 5" class="form-control" required>
-                <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option *ngIf="event != 'Platform' " value=1>1m</option>
+                <option *ngIf="event != 'Platform' " value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
-            <div class="select__arrow"></div>
+              <div class="select__arrow"></div>
             </div>
 
+            <span *ngIf="event == '1m'" class="levLabel">1m</span>
+            <span *ngIf="event == '3m'" class="levLabel">3m</span>
+            <span *ngIf="event == '10m'" class="levLabel">10m</span>
+
             <div id="dd5" class="dd"> 
-              {{ ddService.getDD(dive5, pos5, level5) | toFloat }} 
+              <span *ngIf="event == '1m'" id="dd5_1m">
+                {{ ddService.getDD(dive5, pos5, 1) | toFloat }}</span>
+              <span *ngIf="event == '3m'" id="dd5_3m">
+                {{ ddService.getDD(dive5, pos5, 3) | toFloat }}</span>
+              <span *ngIf="event == '10m'" id="dd5_10m">
+                {{ ddService.getDD(dive5, pos5, 10) | toFloat }}</span>
+              <span *ngIf="event == 'Custom' || event == 'Platform'" id="dd5_other">
+                {{ ddService.getDD(dive5, pos5, level5) | toFloat }}
+              </span>
             </div>
           
           </div>
