@@ -28,6 +28,12 @@ export class NewDiverComponent implements OnInit {
   }
 
   newDiver() {
+    var name = this.diverName.trim();
+    if(name == "") {
+      alert("Please enter a name for the diver.");
+      return;
+    }
+
     var dives = [];
 
     var dds = [];
@@ -74,7 +80,7 @@ export class NewDiverComponent implements OnInit {
         }
     }
 
-    this.diverService.addDiver(new Diver(this.diverName, this.sex, dives));
+    this.diverService.addDiver(new Diver(name, this.sex, dives));
 
     this.resetForm();
   }

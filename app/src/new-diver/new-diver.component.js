@@ -27,6 +27,11 @@ var NewDiverComponent = (function () {
         this.event = '1m';
     };
     NewDiverComponent.prototype.newDiver = function () {
+        var name = this.diverName.trim();
+        if (name == "") {
+            alert("Please enter a name for the diver.");
+            return;
+        }
         var dives = [];
         var dds = [];
         var bounds = 5;
@@ -73,7 +78,7 @@ var NewDiverComponent = (function () {
                     dives.push(new dive_1.Dive(this.dive5, this.pos5, this.level5, dds[5]));
                 }
         }
-        this.diverService.addDiver(new diver_1.Diver(this.diverName, this.sex, dives));
+        this.diverService.addDiver(new diver_1.Diver(name, this.sex, dives));
         this.resetForm();
     };
     NewDiverComponent.prototype.addDives = function (lev, dds) {
