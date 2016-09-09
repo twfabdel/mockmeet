@@ -1,5 +1,6 @@
 .newDiverContainer {
   float:left;
+  width:200px;
 }
 
 ol {
@@ -18,8 +19,6 @@ input.form-control {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
-
-
 
 .select {
   position: relative;
@@ -67,13 +66,33 @@ input:-webkit-autofill {
   width:40px;
 }
 
+.selectEvent select {
+  width:70px;
+}
+
+.selectEvent .select__arrow {
+  left:55px;
+}
+
 .selectSex .select__arrow, .selectPos .select__arrow {
   left:25px;
 }
 
+.sexContainer {
+  padding-top:10px;
+}
+
 .dd {
   float:right;
-  font-size:14px;
+  font-size:16px;
+}
+
+.levLabel {
+  padding-left:10px;
+}
+
+.headerInfo {
+  border-spacing:10px 2px;
 }
 
 .headerInfo input{

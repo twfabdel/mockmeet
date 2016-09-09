@@ -24,9 +24,16 @@ export class NewDiverComponent implements OnInit {
     this.sex='F';
     this.setPosition();
     this.setLevel();
+    this.event='1m';
   }
 
   newDiver() {
+    var name = this.diverName.trim();
+    if(name == "") {
+      alert("Please enter a name for the diver.");
+      return;
+    }
+
     var dives = [];
 
     var dds = [];
@@ -37,9 +44,15 @@ export class NewDiverComponent implements OnInit {
 
     var i = 0;
     while(i < bounds) {
-      var ddObj = document.getElementById('dd' + i);
+      var ev = this.event;
+      if(ev == 'Platform' || ev == 'Custom') {
+        ev = 'other';
+      }
+      var elemName = 'dd' + i + '_' + ev;
+
+      var ddObj = document.getElementById(elemName);
       if(!ddObj) {
-        alert("Please enter a valid dive for dive number " + i + ".");
+        alert("Error: Cannot find " + elemName);
         return;
       }
       var dd = parseFloat(ddObj.innerHTML);
@@ -51,19 +64,39 @@ export class NewDiverComponent implements OnInit {
       i += 1;
     }
 
-    dives.push(new Dive(this.dive0, this.pos0, this.level0, dds[0]));
-    dives.push(new Dive(this.dive1, this.pos1, this.level1, dds[1]));
-    dives.push(new Dive(this.dive2, this.pos2, this.level2, dds[2]));
-    dives.push(new Dive(this.dive3, this.pos3, this.level3, dds[3]));
-    dives.push(new Dive(this.dive4, this.pos4, this.level4, dds[4]));
-    
-    if(this.sex=="M") {
-      dives.push(new Dive(this.dive5, this.pos5, this.level5, dds[5]));
+    switch(this.event) {
+      case '1m': dives = this.addDives(1, dds); break;
+      case '3m': dives = this.addDives(3, dds); break;
+      case '10m': dives = this.addDives(10, dds); break;
+      default: 
+        dives.push(new Dive(this.dive0, this.pos0, this.level0, dds[0]));
+        dives.push(new Dive(this.dive1, this.pos1, this.level1, dds[1]));
+        dives.push(new Dive(this.dive2, this.pos2, this.level2, dds[2]));
+        dives.push(new Dive(this.dive3, this.pos3, this.level3, dds[3]));
+        dives.push(new Dive(this.dive4, this.pos4, this.level4, dds[4]));
+        
+        if(this.sex=="M") {
+          dives.push(new Dive(this.dive5, this.pos5, this.level5, dds[5]));
+        }
     }
 
-    this.diverService.addDiver(new Diver(this.diverName, this.sex, dives));
+    this.diverService.addDiver(new Diver(name, this.sex, dives));
 
     this.resetForm();
+  }
+
+  private addDives(lev: number, dds: number[]) {
+    var dives = []
+    dives.push(new Dive(this.dive0, this.pos0, lev, dds[0]));
+    dives.push(new Dive(this.dive1, this.pos1, lev, dds[1]));
+    dives.push(new Dive(this.dive2, this.pos2, lev, dds[2]));
+    dives.push(new Dive(this.dive3, this.pos3, lev, dds[3]));
+    dives.push(new Dive(this.dive4, this.pos4, lev, dds[4]));
+    
+    if(this.sex=="M") {
+      dives.push(new Dive(this.dive5, this.pos5, lev, dds[5]));
+    }
+    return dives;
   }
 
   private resetForm() {
@@ -91,12 +124,12 @@ export class NewDiverComponent implements OnInit {
   }
 
   private setLevel() {
-    this.level0='1';
-    this.level1='1';
-    this.level2='1';
-    this.level3='1';
-    this.level4='1';
-    this.level5='1';
+    this.level0='5';
+    this.level1='5';
+    this.level2='5';
+    this.level3='5';
+    this.level4='5';
+    this.level5='5';
   }
 
   private totalDD() {
