@@ -24,6 +24,7 @@ var NewDiverComponent = (function () {
         this.sex = 'F';
         this.setPosition();
         this.setLevel();
+        this.event = '1m';
     };
     NewDiverComponent.prototype.newDiver = function () {
         var dives = [];

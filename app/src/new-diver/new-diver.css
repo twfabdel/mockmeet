@@ -19,8 +19,6 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-
-
 .select {
   position: relative;
   display: inline-block;
@@ -58,8 +56,7 @@ input:-webkit-autofill {
   border-color: white transparent transparent transparent;
 }
 
-.select select:hover ~ .select__arrow,
-.select select:focus ~ .select__arrow{
+.select select:hover ~ .select__arrow{
   border-top-color: #000;
 }
 
@@ -67,13 +64,29 @@ input:-webkit-autofill {
   width:40px;
 }
 
+.selectEvent select {
+  width:70px;
+}
+
+.selectEvent .select__arrow {
+  left:55px;
+}
+
 .selectSex .select__arrow, .selectPos .select__arrow {
   left:25px;
+}
+
+.sexContainer {
+  padding-top:10px;
 }
 
 .dd {
   float:right;
   font-size:14px;
+}
+
+.headerInfo {
+  border-spacing:10px 2px;
 }
 
 .headerInfo input{

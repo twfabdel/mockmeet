@@ -1,17 +1,51 @@
 <div class="newDiverContainer">
     <form (ngSubmit)="newDiver()" #diverForm="ngForm">
-      <div class="headerInfo">
-        <label for="name">Name: </label>
-        <input class="form-control" type="text" [(ngModel)]="diverName" ngControl="name" name="name" required>
+      <table class="headerInfo">
+        <tr>
+          <td>
+            <label for="name">Name: </label>
+          </td>
+
+          <td>
+            <input class="form-control" type="text" [(ngModel)]="diverName" 
+                   ngControl="name" name="name" required>
+          </td>
+        </tr>
         
-        <div class="select selectSex">
-          <select [(ngModel)]="sex" ngControl="sex" name="sex" required>
-            <option selected>M</option>
-            <option>F</option>
-          </select>
-          <div class="select__arrow s"></div>
-        </div>
-      </div>
+        <tr>
+          <td>
+            <label for="sex">Sex: </label>
+          </td>
+
+          <td>
+            <div class="select selectSex">
+              <select [(ngModel)]="sex" ngControl="sex" name="sex" required>
+                <option selected>M</option>
+                <option>F</option>
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="event">Event: </label>
+          </td>
+
+          <td>
+            <div class="select selectEvent">
+              <select [(ngModel)]="event" ngControl="event" name="event" required>
+                <option>1m</option>
+                <option>3m</option>
+                <option>10m</option>
+                <option>Platform</option>
+                <option>Custom</option>   
+              </select>
+              <div class="select__arrow"></div>
+            </div>
+          </td>
+      </table>
 
       <ol>
         
@@ -64,6 +98,11 @@
               <select [(ngModel)]="level1" ngControl="level1" 
                   name="dive level 1" class="form-control" required>
                 <option *ngFor="let l of [1,3,5,7,10]" [value]="l">{{l}}m</option>
+                <option value=1>1m</option>
+                <option value=3>3m</option>
+                <option value=5>5m</option>
+                <option value=7>7m</option>
+                <option value=10>10m</option>
               </select>
             <div class="select__arrow"></div>
             </div>
